@@ -23,8 +23,8 @@
                 <form name="Formulario" onsubmit="return validate_form()">
 
                   <div class="form-outline mb-4">
-                    <label class="form-label" for="Usuario" id="labelusuario">Nickname</label>
-                    <input type="text" id="Usuario" class="form-control form-control-lg" />
+                    <label class="form-label" for="usuario" id="labelusuario">Nickname</label>
+                    <input type="text" id="usuario" name="usuario"class="form-control form-control-lg" />
                   </div>
   
                   <div class="form-outline mb-4">
