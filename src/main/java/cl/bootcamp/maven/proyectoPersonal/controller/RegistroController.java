@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import cl.bootcamp.maven.proyectoPersonal.models.dao.ClienteDAO;
@@ -18,14 +20,14 @@ public class RegistroController {
     @Autowired
     private ClienteDAO clienteDAO;
 
-//    @RequestMapping(value="/registro")
-//    public ModelAndView mostrarFormularioRegistro(HttpServletResponse response) throws IOException {
-//        return new ModelAndView("registro");
-//    }
+    @GetMapping(value="/registro")
+    public ModelAndView mostrarFormularioRegistro(HttpServletResponse response) throws IOException {
+        return new ModelAndView("registro");
+    }
 
-    @RequestMapping(value="/registro")
+    @RequestMapping(value="/registroFormulario", method= RequestMethod.POST)
     
-    public ModelAndView registrarCliente(@RequestParam("idUsuario") int idUsuario,
+    public ModelAndView agregarCliente(@RequestParam("idUsuario") int idUsuario,
                                          @RequestParam("nombreUsuario") String nombreUsuario,
                                          @RequestParam("password") String password,
                                          @RequestParam("tipoUsuario") int tipoUsuario,
@@ -42,6 +44,6 @@ public class RegistroController {
         clienteDAO.agregarCliente(cliente);
 
         // Redireccionar a la página de registro exitoso
-        return new ModelAndView("registro_exitoso");
+        return new ModelAndView("home");
     }
 }
