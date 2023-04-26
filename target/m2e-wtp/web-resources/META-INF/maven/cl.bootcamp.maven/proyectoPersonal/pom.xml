@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cl.bootcamp.maven</groupId>
@@ -68,36 +70,51 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-    		<groupId>org.hibernate</groupId>
-    		<artifactId>hibernate-search-jsr352-jberet</artifactId>
-    		<version>5.11.12.Final</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search-jsr352-jberet</artifactId>
+			<version>5.11.12.Final</version>
 		</dependency>
-		
+
 		<dependency>
-			  <groupId>javax.servlet</groupId>
-			  <artifactId>jstl</artifactId>
-			  <version>1.2</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
-		  <groupId>taglibs</groupId>
-		  <artifactId>standard</artifactId>
-		  <version>1.1.2</version>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
 		</dependency>
-			
-		  <!-- Dependencia para la API de Google Maps -->
-		  <dependency>
-		    <groupId>com.google.maps</groupId>
-		    <artifactId>google-maps-services</artifactId>
-		    <version>0.15.0</version>
-		  </dependency>
-		
+
+		<!-- Dependencia para la API de Google Maps -->
+		<dependency>
+			<groupId>com.google.maps</groupId>
+			<artifactId>google-maps-services</artifactId>
+			<version>0.15.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.26</version> <!-- Reemplaza con la versión más reciente
+			del conector MySQL -->
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version> <!-- o la versión más reciente de JUnit -->
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
-	
+
 	<repositories>
 		<repository>
 			<id>springsource-milestones</id>
 			<name>SpringSource Milestones Proxy</name>
-			<url>https://oss.sonatype.org/content/repositories/springsource-milestones</url>
+			<url>
+				https://oss.sonatype.org/content/repositories/springsource-milestones</url>
 		</repository>
 	</repositories>
 
@@ -113,14 +130,14 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-						<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
-                <configuration>
-                	<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
-                </configuration>
-      		</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<webappDirectory>/sample/servlet/container/deploy/directory</webappDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

@@ -1,20 +1,26 @@
 package cl.bootcamp.maven.proyectoPersonal.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cliente extends Usuarios{
 
 		private String nombreCliente;
 		private String apellidoCliente;
 		private String genero;
 		private String emailCliente;
+		private List<Mensaje> mensajes;
 	
-		public Cliente(int idUsuario, String nombreUsuario, String password, int tipoUsuario, String nombreCliente, String apellidoCliente,
-				String genero, String emailCliente) {
-			super(idUsuario, nombreUsuario, password, tipoUsuario);
-			this.nombreCliente = nombreCliente;
-			this.apellidoCliente = apellidoCliente;
-			this.genero = genero;
-			this.emailCliente = emailCliente;
-		}
+	    // Constructor
+	    public Cliente(int idUsuario, String nombreUsuario, String password, int tipoUsuario, String nombreCliente,
+	            String apellidoCliente, String genero, String emailCliente) {
+	        super(idUsuario, nombreUsuario, password, tipoUsuario);
+	        this.nombreCliente = nombreCliente;
+	        this.apellidoCliente = apellidoCliente;
+	        this.genero = genero;
+	        this.emailCliente = emailCliente;
+	        this.mensajes = new ArrayList<>();
+	    }
 
 		public String getNombreCliente() {
 			return nombreCliente;
@@ -47,6 +53,17 @@ public class Cliente extends Usuarios{
 		public void setEmailCliente(String emailCliente) {
 			this.emailCliente = emailCliente;
 		}
-
 		
+	    public List<Mensaje> getMensajes() {
+	        return mensajes;
+	    }
+
+	    public void agregarMensaje(Mensaje mensaje) {
+	        mensajes.add(mensaje);
+	    }
+
+	    public void eliminarMensaje(Mensaje mensaje) {
+	        mensajes.remove(mensaje);
+	    }
+				
 }
