@@ -1,9 +1,9 @@
-/*CREAR DATABASE Proyecto;*/
-DROP DATABASE IF EXISTS Proyecto;
-CREATE DATABASE Proyecto;
+/*CREAR DATABASE proyectobd;*/
+DROP DATABASE IF EXISTS proyectobd;
+CREATE DATABASE proyectobd;
 
-/*USAR TABLA Proyecto*/
-USE Proyecto;
+/*USAR TABLA proyectobd*/
+USE proyectobd;
 
 -- Creación de la tabla Usuarios
 CREATE TABLE Usuarios (
