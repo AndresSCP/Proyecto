@@ -11,8 +11,10 @@
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item" href="perfil">Perfil</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="index.jsp">Salir</a></li>
-				</ul>
+					<li><a class="dropdown-item" href="home">Salir</a></li>
+				</ul></li>
+			<li class="nav-item">
+			<a class="nav-link active" aria-current="page" href="administrativo">Administrar</a>
 			</li>
 		</ul>
 		<form class="d-flex" role="search">

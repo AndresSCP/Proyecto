@@ -7,7 +7,7 @@ USE proyectobd;
 
 -- Creación de la tabla Usuarios
 CREATE TABLE Usuarios (
-  idUsuario INT PRIMARY KEY,
+  idUsuario INT PRIMARY KEY AUTO_INCREMENT,
   nombreUsuario VARCHAR(50),
   password VARCHAR(50),
   tipoUsuario INT
@@ -45,3 +45,33 @@ CREATE TABLE Mensaje (
   FOREIGN KEY (idUsuario) REFERENCES Cliente(idUsuario)
 );
 
+-- Insertar datos en la tabla Usuarios
+INSERT INTO Usuarios (nombreUsuario, password, tipoUsuario)
+VALUES ('usuario1', '123456', 1),
+       ('usuario2', 'abcdef', 1),
+       ('usuario3', 'qwerty', 2),
+       ('usuario4', 'uiopjk', 2);
+
+-- Insertar datos en la tabla Cliente
+INSERT INTO Cliente (idUsuario, nombreUsuario, password, tipoUsuario, nombreCliente, apellidoCliente, genero, emailCliente)
+VALUES (1, 'usuario1', '123456', 1, 'Juan', 'Pérez', 'M', 'juan.perez@example.com'),
+       (2, 'usuario2', 'abcdef', 1, 'María', 'González', 'F', 'maria.gonzalez@example.com');
+
+-- Insertar datos en la tabla Administrativo
+INSERT INTO Administrativo (idUsuario, nombreUsuario, password, tipoUsuario, nombreAdmin, emailAdmin)
+VALUES (3, 'usuario3', 'qwerty', 2, 'Ana', 'ana@example.com'),
+       (4, 'usuario4', 'uiopjk', 2, 'Pedro', 'pedro@example.com');
+
+-- Insertar datos en la tabla Mensaje
+INSERT INTO Mensaje (lugar, mensaje, referencia, idUsuario)
+VALUES ('México', 'Hola, ¿cómo estás?', NULL, 1),
+       ('Argentina', 'Buenos días', NULL, 2),
+       ('Colombia', 'Necesito ayuda', 'Mensaje anterior', 1);
+
+select * from Administrativo;
+
+select * from Usuarios;
+
+select * from Cliente;
+
+select * from mensaje;
