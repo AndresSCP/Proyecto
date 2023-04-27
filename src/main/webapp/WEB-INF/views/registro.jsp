@@ -12,14 +12,14 @@
 <body>
 
 <div class="container mt-5">
-    <h2>Registro de Cliente</h2>
+    <h2>Crea una cuenta</h2>
     <form action="/registro" method="POST">
-        <div class="form-group">
+<!--         <div class="form-group">
             <label for="idUsuario">ID de Usuario:</label>
             <input type="number" class="form-control" id="idUsuario" name="idUsuario" required>
-        </div>
+        </div> -->
         <div class="form-group">
-            <label for="nombreUsuario">Nombre de Usuario:</label>
+            <label for="nombreUsuario">Nickname:</label>
             <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required>
         </div>
         <div class="form-group">
@@ -31,11 +31,11 @@
             <input type="number" class="form-control" id="tipoUsuario" name="tipoUsuario" required>
         </div>
         <div class="form-group">
-            <label for="nombreCliente">Nombre del Cliente:</label>
+            <label for="nombreCliente">Nombre:</label>
             <input type="text" class="form-control" id="nombreCliente" name="nombreCliente" required>
         </div>
         <div class="form-group">
-            <label for="apellidoCliente">Apellido del Cliente:</label>
+            <label for="apellidoCliente">Apellido:</label>
             <input type="text" class="form-control" id="apellidoCliente" name="apellidoCliente" required>
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="emailCliente">Email del Cliente:</label>
+            <label for="emailCliente">Email:</label>
             <input type="email" class="form-control" id="emailCliente" name="emailCliente" required>
         </div>
         <button type="submit" class="btn btn-primary">Registrarse</button>

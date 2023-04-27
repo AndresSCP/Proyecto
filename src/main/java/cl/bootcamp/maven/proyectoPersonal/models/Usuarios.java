@@ -57,4 +57,12 @@ public class Usuarios {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Usuarios [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", password=" + password
+				+ ", tipoUsuario=" + tipoUsuario + "]";
+	}
+
+	
+
 }
