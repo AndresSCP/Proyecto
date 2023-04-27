@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 public class AdministrativoController {
 	
@@ -28,13 +29,18 @@ public class AdministrativoController {
 	
 	@RequestMapping(value="/administrativo")
 	public ModelAndView test(HttpServletResponse response) throws IOException{
-	    String sql = "select * from usuarios;";
-	    List ListUsuarios = this.jdbcTemplate.queryForList(sql);
+	    String sqlUsuarios = "select * from usuarios;";
+	    String sqlCliente = "select * from cliente;";
+	    String sqlAdministrativo = "select * from administrativo;";
+	    List ListaUsuarios = this.jdbcTemplate.queryForList(sqlUsuarios);
+	    List ListaCliente = this.jdbcTemplate.queryForList(sqlCliente);
+	    List ListaAdministrativo = this.jdbcTemplate.queryForList(sqlAdministrativo);
 	    ModelAndView modelAndView = new ModelAndView("administrativo");
-	    modelAndView.addObject("usuarios", ListUsuarios);
+	    modelAndView.addObject("usuarios", ListaUsuarios);
+	    modelAndView.addObject("cliente", ListaCliente);
+	    modelAndView.addObject("administrativo", ListaAdministrativo);
 	    return modelAndView;    
 	}
-	
 	
 }
 

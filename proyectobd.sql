@@ -64,14 +64,18 @@ VALUES (3, 'usuario3', 'qwerty', 2, 'Ana', 'ana@example.com'),
 
 -- Insertar datos en la tabla Mensaje
 INSERT INTO Mensaje (lugar, mensaje, referencia, idUsuario)
-VALUES ('México', 'Hola, ¿cómo estás?', NULL, 1),
-       ('Argentina', 'Buenos días', NULL, 2),
+VALUES ('Viña del Mar', 'Accidente de transito', "Mall Marina", 1),
+       ('Quillota', 'Incendio', "Camino San Isidro", 2),
        ('Colombia', 'Necesito ayuda', 'Mensaje anterior', 1);
-
-select * from Administrativo;
-
+       
 select * from Usuarios;
 
 select * from Cliente;
 
+select * from Administrativo;
+
 select * from mensaje;
+
+SELECT c.idUsuario, c.nombreCliente, m.lugar, m.mensaje, m.referencia
+FROM Cliente c
+INNER JOIN Mensaje m ON c.idUsuario = m.idUsuario;

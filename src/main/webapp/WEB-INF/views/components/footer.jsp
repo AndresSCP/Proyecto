@@ -7,8 +7,8 @@
 		<hr>
 		<p class="text-center text-muted">© 2023 Andres, Inc</p>
 		<div class="text-center">
-			<a class="btn btn-primary " type="button" href="index.jsp">Volver
-				al inicio</a>
+			<a class="btn btn-primary " type="button" href="main">Volver
+				a pagina principal</a>
 		</div>
 	</footer>
 </div>
