@@ -5,8 +5,12 @@ public class Administrativo extends Usuarios{
 	private String nombreAdmin;
 	private String emailAdmin;
 	
-	public Administrativo(int idUsuario, String nombreUsuario, String password, int tipoUsuario, String nombreAdmin,String emailAdmin) {
-		super(idUsuario, nombreUsuario, password, tipoUsuario);
+	public Administrativo() {
+		super();
+	}	
+	
+	public Administrativo(int idUsuario, String username, String password, String rol, String nombreAdmin,String emailAdmin) {
+		super(idUsuario, username, password, rol);
 		this.nombreAdmin = nombreAdmin;
 		this.emailAdmin = emailAdmin;
 	}

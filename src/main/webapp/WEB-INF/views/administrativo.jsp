@@ -60,9 +60,9 @@
 				<c:forEach items="${usuarios}" var="usuarios">
 					<tr>
 						<td>${usuarios.idUsuario}</td>
-						<td>${usuarios.nombreUsuario}</td>
+						<td>${usuarios.username}</td>
 						<td>${usuarios.password}</td>
-						<td>${usuarios.tipoUsuario}</td>
+						<td>${usuarios.rol}</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -87,7 +87,7 @@
 				<c:forEach items="${cliente}" var="cliente">
 					<tr>
 						<td>${cliente.idUsuario}</td>
-						<td>${cliente.nombreUsuario}</td>
+						<td>${cliente.username}</td>
 						<td>${cliente.password}</td>
 						<td>${cliente.nombreCliente}</td>
 						<td>${cliente.apellidoCliente}</td>
@@ -122,13 +122,37 @@
 				<c:forEach items="${administrativo}" var="administrativo">
 					<tr>
 						<td>${administrativo.idUsuario}</td>
-						<td>${administrativo.nombreUsuario}</td>
+						<td>${administrativo.username}</td>
 						<td>${administrativo.password}</td>
-						<td>${administrativo.tipoUsuario}</td>
+						<td>${administrativo.rol}</td>
 						<td>${administrativo.nombreAdmin}</td>
 						<td>${administrativo.emailAdmin}</td>
 					</tr>
 				</c:forEach>
+			</table>
+			
+			<p id="tituloMensajes">Mensajes</p>
+
+			<table id="tablaMensajes"
+				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				<tr>
+					<th>ID</th>
+					<th>Nickname</th>
+					<th>Lugar</th>
+					<th>Mensaje</th>
+					<th>Referencia</th>
+					<th>Fecha y Hora</th>
+				</tr>
+					<c:forEach var="mensaje" items="${mensaje}">
+					<tr>
+						<td>${mensaje.idUsuario}</td>
+						<td>${mensaje.username}</td>
+						<td>${mensaje.lugar}</td>
+						<td>${mensaje.mensaje}</td>
+						<td>${mensaje.referencia}</td>
+						<td>${mensaje.fechaCreacion}</td>
+					</tr>
+					</c:forEach>
 
 			</table>
 		</div>

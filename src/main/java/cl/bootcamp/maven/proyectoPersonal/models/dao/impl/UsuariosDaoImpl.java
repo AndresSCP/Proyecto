@@ -22,13 +22,13 @@ public class UsuariosDaoImpl implements UsuariosDAO {
 	@Override
 	public void agregar(Usuarios usuario) {
 		String sql = "INSERT INTO Usuarios (nombreUsuario, password, tipoUsuario) VALUES (?, ?, ?)";
-		jdbcTemplate.update(sql, usuario.getNombreUsuario(), usuario.getPassword(), usuario.getTipoUsuario());
+		jdbcTemplate.update(sql, usuario.getUsername(), usuario.getPassword(), usuario.getRol());
 	}
 
 	@Override
 	public void actualizar(Usuarios usuario) {
 		String sql = "UPDATE Usuarios SET nombreUsuario = ?, password = ?, tipoUsuario = ? WHERE idUsuario = ?";
-		jdbcTemplate.update(sql, usuario.getNombreUsuario(), usuario.getPassword(), usuario.getTipoUsuario(),
+		jdbcTemplate.update(sql, usuario.getUsername(), usuario.getPassword(), usuario.getRol(),
 				usuario.getIdUsuario());
 	}
 
@@ -40,24 +40,14 @@ public class UsuariosDaoImpl implements UsuariosDAO {
 
 	@Override
 	public Usuarios buscarPorId(int idUsuario) {
-		String sql = "SELECT * FROM Usuarios WHERE idUsuario = ?";
-		return jdbcTemplate.queryForObject(sql, new Object[] { idUsuario }, new UsuariosRowMapper());
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public List<Usuarios> listar() {
-		String sql = "SELECT * FROM Usuarios";
-		return jdbcTemplate.query(sql, new UsuariosRowMapper());
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	private static final class UsuariosRowMapper implements RowMapper<Usuarios> {
-		public Usuarios mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Usuarios usuario = new Usuarios(rowNum, null, null, rowNum);
-			usuario.setIdUsuario(rs.getInt("idUsuario"));
-			usuario.setNombreUsuario(rs.getString("nombreUsuario"));
-			usuario.setPassword(rs.getString("password"));
-			usuario.setTipoUsuario(rs.getInt("tipoUsuario"));
-			return usuario;
-		}
-	}
 }

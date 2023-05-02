@@ -12,9 +12,13 @@ public class Cliente extends Usuarios{
 		private List<Mensaje> mensajes;
 	
 	    // Constructor
-	    public Cliente(int idUsuario, String nombreUsuario, String password, int tipoUsuario, String nombreCliente,
+		public Cliente() {
+			super();
+		}
+		
+	    public Cliente(int idUsuario, String username, String password, String rol, String nombreCliente,
 	            String apellidoCliente, String genero, String emailCliente) {
-	        super(idUsuario, nombreUsuario, password, tipoUsuario);
+	        super(idUsuario, username, password, rol);
 	        this.nombreCliente = nombreCliente;
 	        this.apellidoCliente = apellidoCliente;
 	        this.genero = genero;

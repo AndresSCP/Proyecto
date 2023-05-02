@@ -29,12 +29,12 @@
                             style="width: 100px;" alt="logo">
                           <h4 class="mt-1 mb-5 pb-1">MyAlert!</h4>
                         </div>     
-                        <form action="main">
+                        <form action="login" method="POST">
                           <p>Por favor ingresa a tu cuenta</p>
         
                           <div class="form-outline mb-4">
-                            <input class="form-control" id="name" name="name" minlength="3" type="text" placeholder="Escribe tu usuario" required >
-                            <label for="name">Usuario</label>
+                            <input class="form-control" id="username" name="username" minlength="3" type="text" placeholder="Escribe tu usuario" required >
+                            <label for="username">Usuario</label>
                           </div>
         
                           <div class="form-outline mb-4">

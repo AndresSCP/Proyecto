@@ -20,7 +20,7 @@
 			<a class="nav-link active" aria-current="page" href="administrativo">Administrar</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link disabled">Usuario:<%=session.getAttribute("username")%></a>
+			<a class="nav-link disabled">Usuario:<%=session.getAttribute("usuario")%></a>
 			</li>
 		</ul>
 		<!-- 		<form class="d-flex" role="search">

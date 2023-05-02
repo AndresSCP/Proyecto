@@ -8,16 +8,16 @@ USE proyectobd;
 -- Creación de la tabla Usuarios
 CREATE TABLE Usuarios (
   idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-  nombreUsuario VARCHAR(50),
+  username VARCHAR(50),
   password VARCHAR(50),
-  tipoUsuario INT
+  rol VARCHAR(50) NOT NULL
 );
 -- Creación de la tabla Cliente que extiende de Usuarios
 CREATE TABLE Cliente (
   idUsuario INT PRIMARY KEY,
-  nombreUsuario VARCHAR(50),
+  username VARCHAR(50),
   password VARCHAR(50),
-  tipoUsuario INT,
+  rol VARCHAR(50) null,
   nombreCliente VARCHAR(50),
   apellidoCliente VARCHAR(50),
   genero VARCHAR(10),
@@ -27,9 +27,9 @@ CREATE TABLE Cliente (
 
 CREATE TABLE Administrativo (
   idUsuario INT PRIMARY KEY,
-  nombreUsuario VARCHAR(50),
+  username VARCHAR(50),
   password VARCHAR(50),
-  tipoUsuario INT,
+  rol VARCHAR(50) NOT NULL,
   nombreAdmin VARCHAR(50),
   emailAdmin VARCHAR(50),
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
@@ -46,27 +46,27 @@ CREATE TABLE Mensaje (
 );
 
 -- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (nombreUsuario, password, tipoUsuario)
-VALUES ('usuario1', '123456', 1),
-       ('usuario2', 'abcdef', 1),
-       ('usuario3', 'qwerty', 2),
-       ('usuario4', 'uiopjk', 2);
+INSERT INTO Usuarios (username, password, rol)
+VALUES ('Usuario1', '123456', "Cliente"),
+       ('Usuario2', 'abcdef', "Cliente"),
+       ('Admin1', 'qwerty', "Admin"),
+       ('Admin2', 'uiopjk', "Admin");
 
 -- Insertar datos en la tabla Cliente
-INSERT INTO Cliente (idUsuario, nombreUsuario, password, tipoUsuario, nombreCliente, apellidoCliente, genero, emailCliente)
-VALUES (1, 'usuario1', '123456', 1, 'Juan', 'Pérez', 'M', 'juan.perez@example.com'),
-       (2, 'usuario2', 'abcdef', 1, 'María', 'González', 'F', 'maria.gonzalez@example.com');
+INSERT INTO Cliente (idUsuario, username, password, rol, nombreCliente, apellidoCliente, genero, emailCliente)
+VALUES (1, 'Usuario1', '123456', "Cliente", 'Juan', 'Pérez', 'M', 'juan.perez@example.com'),
+       (2, 'Usuario2', 'abcdef', "Cliente", 'María', 'González', 'F', 'maria.gonzalez@example.com');
 
 -- Insertar datos en la tabla Administrativo
-INSERT INTO Administrativo (idUsuario, nombreUsuario, password, tipoUsuario, nombreAdmin, emailAdmin)
-VALUES (3, 'usuario3', 'qwerty', 2, 'Ana', 'ana@example.com'),
-       (4, 'usuario4', 'uiopjk', 2, 'Pedro', 'pedro@example.com');
+INSERT INTO Administrativo (idUsuario, username, password, rol, nombreAdmin, emailAdmin)
+VALUES (3, 'Admin1', 'qwerty', "Admin", 'Ana', 'ana@example.com'),
+       (4, 'Admin2', 'uiopjk', "Admin", 'Pedro', 'pedro@example.com');
 
 -- Insertar datos en la tabla Mensaje
 INSERT INTO Mensaje (lugar, mensaje, referencia, idUsuario)
 VALUES ('Viña del Mar', 'Accidente de transito', "Mall Marina", 1),
        ('Quillota', 'Incendio', "Camino San Isidro", 2),
-       ('Colombia', 'Necesito ayuda', 'Mensaje anterior', 1);
+       ('Valparaiso', 'Necesito ayuda', 'Mensaje anterior', 1);
        
 select * from Usuarios;
 

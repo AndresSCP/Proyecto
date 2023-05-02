@@ -1,21 +1,25 @@
 package cl.bootcamp.maven.proyectoPersonal.models;
 
+import java.sql.Timestamp;
+
 public class Mensaje {
 	
 	private String idMensaje;
 	private String lugar;
 	private String mensaje;
-	private String referencia;	
+	private String referencia;
+	private Timestamp fechaCreacion;
 
 		
 	public Mensaje() {};
 	
-	public Mensaje(String idMensaje, String lugar, String mensaje, String referencia) {
+	public Mensaje(String idMensaje, String lugar, String mensaje, String referencia, Timestamp fechaCreacion) {
 		super();
 		this.idMensaje = idMensaje;
 		this.lugar = lugar;
 		this.mensaje = mensaje;
 		this.referencia = referencia;
+		this.fechaCreacion = fechaCreacion;
 	}
 
 	public String getIdMensaje() {
@@ -49,11 +53,17 @@ public class Mensaje {
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
 	}
+
+	public Timestamp getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(Timestamp fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
 	
 
-
-
-	}
+}
 
 	
 
