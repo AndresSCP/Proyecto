@@ -10,40 +10,97 @@
 
 <title>Principal</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="resources/style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+	integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+	crossorigin="" />
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.css" />
 </head>
 <body>
 	<%@include file="components/navbar.jsp"%>
-<div class="container mb-5 pt-4" class="row">	
-     <div class="row d-flex justify-content-center">
-	<button id="boton-formulario" class="btn">
-	  <img src="resources/assets/img/alerta.jpg" style="width: 60px;" alt="logo">
-		  <h3>Crea una nueva alerta</h3>
-	</button>
+	<!-- 	<div class="container mb-5 pt-4" class="row">
+		<div class="row d-flex justify-content-center">
+			<button id="boton-formulario" class="btn">
+				<img src="resources/assets/img/alerta.jpg" style="width: 60px;"
+					alt="logo">
+				<h3>Crea una nueva alerta</h3>
+			</button>
+		</div>
+		<div class="container mb-5 pt-4" id="formulario"
+			class="container mb-5 pt-4" class="row">
+			<div>
+				<form action="mensaje" method="POST">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="lugar" name="lugar"
+							placeholder="Direccion" Required> <label for="lugar">Direccion</label>
+					</div>
+					<div class="form-floating mb-3">
+						<textarea class="form-control"
+							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
+							name="mensaje" Required></textarea>
+						<label for="mensaje">Escribe tu mensaje de alerta!</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="referencia"
+							name="referencia" placeholder="Referencia" Required> <label
+							for="referencia">Escribe una Referencia</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Agregar
+						mensaje</button>
+				</form>
+			</div>
+		</div>
+	</div> -->
+	<div class="container mb-5 pt-4" class="row">
 
-</div>
-	<div class="container mb-5 pt-4" id="formulario" class="container mb-5 pt-4" class="row">
-		<div>
-			<form action="mensaje" method="POST">
-			    <div class="form-floating mb-3">
-			        <input type="text" class="form-control" id="lugar" name="lugar" placeholder="Direccion" Required>
-			        <label for="lugar">Direccion</label>
-			    </div>
-			    <div class="form-floating mb-3">
-			        <textarea class="form-control" placeholder="Escribe tu mensaje de alerta!" id="mensaje" name="mensaje" Required></textarea>
-			        <label for="mensaje">Escribe tu mensaje de alerta!</label>
-			    </div>
-			    <div class="form-floating mb-3">
-			        <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Referencia" Required>
-			        <label for="referencia">Escribe una Referencia</label>
-			    </div>
-			    <button type="submit" class="btn btn-primary">Agregar mensaje</button>
-			</form>
+		<div class="row d-flex align-items-center justify-content-center">
+			<!-- Feed -->
+			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+				<form action="mensaje" method="POST">
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="lugar" name="lugar"
+							placeholder="Direccion" Required> <label for="lugar">Direccion</label>
+					</div>
+					<div class="form-floating mb-3">
+						<textarea class="form-control"
+							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
+							name="mensaje" Required></textarea>
+						<label for="mensaje">Escribe tu mensaje de alerta!</label>
+					</div>
+					<div class="form-floating mb-3">
+						<input type="text" class="form-control" id="referencia"
+							name="referencia" placeholder="Referencia" Required> <label
+							for="referencia">Escribe una Referencia</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Agregar
+						mensaje</button>
+				</form>
+			</div>
+			<!-- Icono -->
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+				<div class="row share-buttons">
+					<div class="col-md-8 col-md-offset-2">
+						<div>
+							<button type="button" class="btn btn-danger btn-square-md">
+								Envía tu Alerta
+							</button>
+						</div>
+						<div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 			        <img src="resources/assets/img/alerta.jpg" style="width: 60px;" alt="logo">
+			        <h3 id="tituloIcono">Crea una nueva alerta</h3> -->
+
 		</div>
 	</div>
-</div>	
+
 	<!-- Mapa y Feed -->
 	<div class="container mb-5 pt-4" class="row">
 
@@ -51,7 +108,7 @@
 			<!-- mapa -->
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 ">
 				<div>
-    				<div id="myMap" style="height: 500px"></div>
+					<div id="myMap" style="height: 500px"></div>
 				</div>
 			</div>
 			<!-- Feed -->
@@ -63,9 +120,9 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Feed de Alertas -->
-	
+
 	<div class="container mb-5 pt-4" class="row">
 		<section class="pb-4">
 			<div class="bg-white border rounded-5">
@@ -126,14 +183,26 @@
 	</div>
 
 	<!-- Scripts -->
-	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script><script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<script src="https://kit.fontawesome.com/44bddf7061.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+		integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+		crossorigin=""></script>
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+		integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+		crossorigin=""></script>
+	<script
+		src="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.js"></script>
+	<script
+		src="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+	<script async src="https://platform.twitter.com/widgets.js"
+		charset="utf-8"></script>
 	<script src="resources/scripts/main.js"></script>
 	<script src="resources/scripts/scriptTablaMain.js"></script>
 	<script src="resources/scripts/scriptMapa.js"></script>
 </body>
-	<!-- Footer -->
-	
-	<%@include file="components/footer.jsp"%>
+<!-- Footer -->
+
+<%@include file="components/footer.jsp"%>
 </html>
