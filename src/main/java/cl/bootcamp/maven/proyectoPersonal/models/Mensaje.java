@@ -9,17 +9,19 @@ public class Mensaje {
 	private String mensaje;
 	private String referencia;
 	private Timestamp fechaCreacion;
+	private Integer idUsuario;
 
 		
 	public Mensaje() {};
 	
-	public Mensaje(String idMensaje, String lugar, String mensaje, String referencia, Timestamp fechaCreacion) {
+	public Mensaje(String idMensaje, String lugar, String mensaje, String referencia, Timestamp fechaCreacion,Integer idUsuario) {
 		super();
 		this.idMensaje = idMensaje;
 		this.lugar = lugar;
 		this.mensaje = mensaje;
 		this.referencia = referencia;
 		this.fechaCreacion = fechaCreacion;
+		this.idUsuario = idUsuario;
 	}
 
 	public String getIdMensaje() {
@@ -60,6 +62,14 @@ public class Mensaje {
 
 	public void setFechaCreacion(Timestamp fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
+	}
+
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	
 

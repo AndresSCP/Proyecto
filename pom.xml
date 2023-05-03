@@ -113,7 +113,6 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>${spring.version}</version>
 		</dependency>
-		
 	</dependencies>
 
 	<repositories>

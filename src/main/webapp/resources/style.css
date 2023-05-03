@@ -56,20 +56,6 @@ body {
 }
 
 /* Main, Mapa y feed */
-.mapouter {
-	position: relative;
-	text-align: center;
-	height: 500px;
-	width: auto;
-}
-
-.gmap_canvas {
-	overflow: hidden;
-	background: none !important;
-	height: 500px;
-	width: auto;
-}
-
 .twitter-Header {
 	overflow: hidden;
 	display: block;
@@ -77,10 +63,18 @@ body {
 	width: 500px !important;
 }
 
+.form-check-shadow input.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+ #formularioMensaje {
+        display: none;
+ }
 /* Administrativo */
 #checkboxAdmin {
 	display: flex;
 	justify-content: center;
+	 background-color: #fff; 
 }
 
 /* Responsividad */
@@ -101,4 +95,12 @@ body {
 	#fotomapa {
 		display: none;
 	}
+}
+
+#searchBox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background-color: white;
 }

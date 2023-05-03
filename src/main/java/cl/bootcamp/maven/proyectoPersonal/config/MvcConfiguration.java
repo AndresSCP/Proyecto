@@ -40,7 +40,7 @@ public class MvcConfiguration implements WebMvcConfigurer{
 		dataSource.setPassword("12345");
 		return dataSource;
 	}
-	
+		
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");

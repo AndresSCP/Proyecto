@@ -29,7 +29,7 @@ CREATE TABLE Administrativo (
   idUsuario INT PRIMARY KEY,
   username VARCHAR(50),
   password VARCHAR(50),
-  rol VARCHAR(50) NOT NULL,
+  rol VARCHAR(50) NULL,
   nombreAdmin VARCHAR(50),
   emailAdmin VARCHAR(50),
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
@@ -41,6 +41,7 @@ CREATE TABLE Mensaje (
   lugar VARCHAR(50),
   mensaje TEXT,
   referencia VARCHAR(50),
+  fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   idUsuario INT,
   FOREIGN KEY (idUsuario) REFERENCES Cliente(idUsuario)
 );
@@ -54,8 +55,8 @@ VALUES ('Usuario1', '123456', "Cliente"),
 
 -- Insertar datos en la tabla Cliente
 INSERT INTO Cliente (idUsuario, username, password, rol, nombreCliente, apellidoCliente, genero, emailCliente)
-VALUES (1, 'Usuario1', '123456', "Cliente", 'Juan', 'Pérez', 'M', 'juan.perez@example.com'),
-       (2, 'Usuario2', 'abcdef', "Cliente", 'María', 'González', 'F', 'maria.gonzalez@example.com');
+VALUES (1, 'Usuario1', '123456', "Cliente", 'Juan', 'Pérez', 'Masculino', 'juan.perez@example.com'),
+       (2, 'Usuario2', 'abcdef', "Cliente", 'María', 'González', 'Femenino', 'maria.gonzalez@example.com');
 
 -- Insertar datos en la tabla Administrativo
 INSERT INTO Administrativo (idUsuario, username, password, rol, nombreAdmin, emailAdmin)

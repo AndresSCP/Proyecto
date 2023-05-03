@@ -52,4 +52,5 @@ function validateForm() {
     $(document).ready(() => {
     $("#basic-form").validate();
     });
-
+    
+    

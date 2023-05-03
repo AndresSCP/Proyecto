@@ -17,40 +17,34 @@
 </head>
 <body>
 	<%@include file="components/navbar.jsp"%>
-	<h1>Listado de Usuarios</h1>
 
-	<div class="containter" id="checkboxAdmin">
-		<div style="display: flex; flex-direction: row;">
-			<div style="margin-right: 10px;">
-				<input type="checkbox" id="showUsuarios" name="showTable"
-					value="usuarios"> <label for="showUsuarios">Mostrar
-					tabla de Usuarios</label>
-			</div>
-			<div style="margin-right: 10px;">
-				<input type="checkbox" id="showClientes" name="showTable"
-					value="clientes"> <label for="showClientes">Mostrar
-					tabla de Clientes</label>
-			</div>
-			<div>
-				<input type="checkbox" id="showAdministrativos" name="showTable"
-					value="administrativos"> <label for="showAdministrativos">Mostrar
-					tabla de Administrativos</label>
-			</div>
-			<div style="margin-right: 10px;">
-				<input type="checkbox" id="showUsuarios" name="showTable"
-					value="usuarios"> <label for="showUsuarios">Mostrar
-					mensajes por Usuario</label>
-			</div>
-		</div>
-	</div>
+<div class="container mx-auto my-4" id="checkboxAdmin">
+  <div class="border rounded p-3">
+    <div class="form-check form-check-lg form-check-inline">
+      <input class="form-check-input ml-3" type="checkbox" id="showUsuarios" name="showTable" value="usuarios">
+      <label class="form-check-label text-light ml-4" for="showUsuarios">Mostrar tabla de Usuarios</label>
+    </div>
+    <div class="form-check form-check-lg form-check-inline">
+      <input class="form-check-input ml-3" type="checkbox" id="showClientes" name="showTable" value="clientes">
+      <label class="form-check-label text-light ml-4" for="showClientes">Mostrar tabla de Clientes</label>
+    </div>
+    <div class="form-check form-check-lg form-check-inline">
+      <input class="form-check-input ml-3" type="checkbox" id="showAdministrativos" name="showTable" value="administrativos">
+      <label class="form-check-label text-light ml-4" for="showAdministrativos">Mostrar tabla de Administrativos</label>
+    </div>
+    <div class="form-check form-check-lg form-check-inline">
+      <input class="form-check-input ml-3" type="checkbox" id="showMensajes" name="showTable" value="mensajes">
+      <label class="form-check-label text-light ml-4" for="showMensajes">Mostrar mensajes por Usuario</label>
+    </div>
+  </div>
+</div>
 	<div class="container mb-5 pt-4" class="row">
 		<div class="table-responsive">
 			<!-- Tabla Usuarios -->
-
-			<p id="tituloAdmin">Usuarios</p>
-
+			
 			<table id="tablaUsuarios"
 				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				<caption>Usuarios</caption>
 				<tr>
 					<th>ID</th>
 					<th>Nombre</th>
@@ -69,10 +63,9 @@
 
 			<!-- Tabla Clientes -->
 
-			<p id="tituloAdmin">Clientes</p>
-
 			<table id="tablaClientes"
 				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				<caption>Clientes</caption>
 				<tr>
 					<th>ID</th>
 					<th>Nickname</th>
@@ -107,10 +100,9 @@
 
 			<!-- Tabla Administrativos -->
 
-			<p id="tituloAdmin">Administrativos</p>
-
 			<table id="tablaAdministrativos"
 				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				<caption>Administrativos</caption>
 				<tr>
 					<th>ID</th>
 					<th>Nickname</th>
@@ -130,31 +122,36 @@
 					</tr>
 				</c:forEach>
 			</table>
-			
-			<p id="tituloMensajes">Mensajes</p>
 
-			<table id="tablaMensajes"
-				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-				<tr>
-					<th>ID</th>
-					<th>Nickname</th>
-					<th>Lugar</th>
-					<th>Mensaje</th>
-					<th>Referencia</th>
-					<th>Fecha y Hora</th>
-				</tr>
-					<c:forEach var="mensaje" items="${mensaje}">
+
+			<input type="text" id="filtroMensaje" placeholder="Filtrar por Usuario">
+			<button id="botonFiltrar">Filtrar</button>
+			<div class="container mb-5 pt-4 table-responsive" tab class="row">
+				<table id="tablaMensajes"
+					class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+					<caption>Mensajes por Usuario</caption>
 					<tr>
-						<td>${mensaje.idUsuario}</td>
-						<td>${mensaje.username}</td>
-						<td>${mensaje.lugar}</td>
-						<td>${mensaje.mensaje}</td>
-						<td>${mensaje.referencia}</td>
-						<td>${mensaje.fechaCreacion}</td>
+						<th>ID</th>
+						<th>Nickname</th>
+						<th>Lugar</th>
+						<th>Mensaje</th>
+						<th>Referencia</th>
+						<th>Fecha y Hora</th>
 					</tr>
+
+					<c:forEach var="mensaje" items="${mensaje}">
+						<tr>
+							<td>${mensaje.idUsuario}</td>
+							<td>${mensaje.username}</td>
+							<td>${mensaje.lugar}</td>
+							<td>${mensaje.mensaje}</td>
+							<td>${mensaje.referencia}</td>
+							<td>${mensaje.fechaCreacion}</td>
+						</tr>
 					</c:forEach>
 
-			</table>
+				</table>
+			</div>
 		</div>
 	</div>
 	<!-- Footer -->

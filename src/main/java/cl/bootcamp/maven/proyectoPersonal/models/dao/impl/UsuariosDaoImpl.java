@@ -3,11 +3,10 @@ package cl.bootcamp.maven.proyectoPersonal.models.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-
 import cl.bootcamp.maven.proyectoPersonal.models.Usuarios;
 import cl.bootcamp.maven.proyectoPersonal.models.dao.UsuariosDAO;
 
@@ -40,8 +39,9 @@ public class UsuariosDaoImpl implements UsuariosDAO {
 
 	@Override
 	public Usuarios buscarPorId(int idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
+	    String sql = "SELECT * FROM Usuarios WHERE idUsuario=?";
+	    return jdbcTemplate.queryForObject(sql, new Object[] { idUsuario }, 
+	        new BeanPropertyRowMapper<>(Usuarios.class));
 	}
 
 	@Override

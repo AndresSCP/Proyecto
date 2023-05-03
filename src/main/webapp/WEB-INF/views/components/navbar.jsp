@@ -20,14 +20,8 @@
 			<a class="nav-link active" aria-current="page" href="administrativo">Administrar</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link disabled">Usuario:<%=session.getAttribute("usuario")%></a>
+			<a class="nav-link disabled">Bienvenido:<%=session.getAttribute("usuario")%></a>
 			</li>
 		</ul>
-		<!-- 		<form class="d-flex" role="search">
-			<input class="form-control me-2" type="search"
-				placeholder="Escribe una direccion aqui" aria-label="Search">
-			<button class="btn btn-outline-success" type="submit">Buscar</button>
-		</form> -->
-
 	</div>
 </nav>

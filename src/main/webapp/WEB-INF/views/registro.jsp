@@ -9,13 +9,11 @@
 <link rel="stylesheet" href="resources/style.css">
 </head>
 <body>
-
-	<section class="vh-100 bg-image">
+<section class="vh-100 bg-image">
 		<div class="mask d-flex align-items-center h-100 gradient-custom-3"
 			id="backgroundregistro">
 			<div class="container h-100">
-				<div
-					class="row d-flex justify-content-center align-items-center h-100">
+				<div class="row d-flex justify-content-center align-items-center h-100">
 					<div class="col-12 col-md-9 col-lg-7 col-xl-6">
 						<div class="card" style="border-radius: 15px;">
 							<div class="card-body p-5">
@@ -92,5 +90,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 	<script src="resources/scripts/main.js"></script>
 	<script src="resources/scripts/scriptValidacion.js"></script>
+	
 </body>
 </html>
