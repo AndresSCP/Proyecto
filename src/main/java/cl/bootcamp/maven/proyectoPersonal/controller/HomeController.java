@@ -13,7 +13,7 @@ public class HomeController {
     @GetMapping("/")
     public String showLoginForm(Model model) {
         model.addAttribute("usuario", new Usuarios());
-        return "home";
+        return "login";
     }
     
 }

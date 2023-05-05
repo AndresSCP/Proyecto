@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <title>Registro de Cliente</title>
 <!-- Enlaces a las librerías de Bootstrap -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/style.css">
+
 </head>
 <body>
 <section class="vh-100 bg-image">
@@ -54,18 +58,42 @@
 												required>
 										</div>
 
-										<div class="form-check d-flex justify-content-center mb-5">
+<!-- 										<div class="form-check d-flex justify-content-center mb-5">
+											  <a href="#!" class="text-body">Estoy de acuerdo con los<u>Terminos de servicio</u></a> 
 											<input class="form-check-input me-2" type="checkbox" value=""
-												id="cajacheckbox" /> <label class="form-check-label"
-												for="cajacheckbox"> Estoy de acuerdo con los <a
-												href="#!" class="text-body"><u>Terminos de servicio</u></a>
+												id="cajacheckbox" />
+											<label class="form-check-label" for="cajacheckbox">
 											</label>
-										</div>
+										</div> -->
 										<button type="submit" class="btn btn-primary">Registrarse</button>
+<!-- 										<div class="text-center">
+											Button HTML (to Trigger Modal)
+											<a href="#myModal" class="trigger-btn" data-toggle="modal">Click
+												to Open Confirm Modal</a>
+										</div> -->
 										<p class="text-center text-muted mt-5 mb-0">
 											Ya tienes una cuenta? <a href="/proyectoPersonal/"
-												class="fw-bold text-body"><u>Login aqui</u></a>
+												class="fw-bold text-body"> Login aqui </a>
 										</p>
+										<!-- Modal HTML -->
+										<div id="myModal" class="modal fade">
+											<div class="modal-dialog modal-confirm">
+												<div class="modal-content">
+													<div class="modal-header">
+														<div class="icon-box">
+															<i class="material-icons">&#xE876;</i>
+														</div>				
+														<h4 class="modal-title">Felicidades!</h4>	
+													</div>
+													<div class="modal-body">
+														<p class="text-center">Registro Correcto!</p>
+													</div>
+													<div class="modal-footer">
+														<button class="btn btn-primary btn-block" data-dismiss="modal">OK</button>
+													</div>
+												</div>
+											</div>
+										</div> 
 									</form>
 								</div>
 							</div>

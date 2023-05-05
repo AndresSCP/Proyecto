@@ -14,6 +14,7 @@
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <link rel="stylesheet" href="resources/style.css">
+<link rel="stylesheet" href="resources/css/styleAdmin.css">
 </head>
 <body>
 	<%@include file="components/navbar.jsp"%>
@@ -39,37 +40,39 @@
   </div>
 </div>
 	<div class="container mb-5 pt-4" class="row">
-		<div class="table-responsive">
 			<!-- Tabla Usuarios -->
 			
-			<table id="tablaUsuarios"
-				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-				<caption>Usuarios</caption>
-				<tr>
-					<th>ID</th>
-					<th>Nombre</th>
-					<th>Password</th>
-					<th>Tipo de Usuario</th>
-				</tr>
-				<c:forEach items="${usuarios}" var="usuarios">
-					<tr>
-						<td>${usuarios.idUsuario}</td>
-						<td>${usuarios.username}</td>
-						<td>${usuarios.password}</td>
-						<td>${usuarios.rol}</td>
-					</tr>
-				</c:forEach>
+			<div class="container mb-5 pt-4 table-responsive">
+			<table id="tablaUsuarios" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+			  <caption class="bg-primary text-white py-2 text-center h5" id="captionId")>Usuarios</caption>
+			  <thead>
+			    <tr>
+			      <th>ID</th>
+			      <th>Nombre</th>
+			      <th>Estado</th>
+			      <th>Rol</th>							
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <c:forEach items="${usuarios}" var="usuarios">
+			      <tr>
+			        <td>${usuarios.idUsuario}</td>
+			        <td>${usuarios.username}</td>
+			        <td>${usuarios.enabled == 1 ? 'Activo' : 'Inactivo'}</td>
+			        <td>${usuarios.role}</td>										
+			      </tr>
+			    </c:forEach>
+			  </tbody>
 			</table>
-
+			</div>
 			<!-- Tabla Clientes -->
-
+			<div class="container mb-5 pt-4 table-responsive">
 			<table id="tablaClientes"
 				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-				<caption>Clientes</caption>
+				<caption class="bg-primary text-white py-2 text-center h5"class="bg-primary text-white py-2 text-center h5">Clientes</caption>
 				<tr>
 					<th>ID</th>
 					<th>Nickname</th>
-					<th>Password</th>
 					<th>Nombre de Usuario</th>
 					<th>Apellido de Usuario</th>
 					<th>Genero</th>
@@ -78,36 +81,32 @@
 
 				</tr>
 				<c:forEach items="${cliente}" var="cliente">
-					<tr>
-						<td>${cliente.idUsuario}</td>
-						<td>${cliente.username}</td>
-						<td>${cliente.password}</td>
-						<td>${cliente.nombreCliente}</td>
-						<td>${cliente.apellidoCliente}</td>
-						<td>${cliente.genero}</td>
-						<td>${cliente.emailCliente}</td>
-						<td>
-							<form method="post" action="SvEliminarCliente">
-								<input type="hidden" name="rut" value="${cliente.runUsuario}">
-								<button type="submit" class="btn btn-danger">
-									<i class="bi bi-trash"></i>
-								</button>
-							</form>
-						</td>
-					</tr>
+				  <tr>
+				    <td>${cliente.idUsuario}</td>
+				    <td>${cliente.username}</td>
+				    <td>${cliente.nombreCliente}</td>
+				    <td>${cliente.apellidoCliente}</td>
+				    <td>${cliente.genero}</td>
+				    <td>${cliente.emailCliente}</td>
+				    <td>
+				      <form method="POST" action="desactivar">
+				        <input type="hidden" name="idUsuario" value="${cliente.idUsuario}">
+				        <button type="submit" class="btn btn-danger">
+				          <i class="bi bi-trash"></i>
+				        </button>
+				      </form>
+				    </td>
+				  </tr>
 				</c:forEach>
 			</table>
-
+			</div>
 			<!-- Tabla Administrativos -->
-
-			<table id="tablaAdministrativos"
-				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-				<caption>Administrativos</caption>
+			<div class="container mb-5 pt-4 table-responsive">
+			<table id="tablaAdministrativos" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				<caption class="bg-primary text-white py-2 text-center h5">Administrativos</caption>
 				<tr>
 					<th>ID</th>
 					<th>Nickname</th>
-					<th>Password</th>
-					<th>Tipo de Usuario</th>
 					<th>Nombre de Usuario</th>
 					<th>Email</th>
 				</tr>
@@ -115,30 +114,27 @@
 					<tr>
 						<td>${administrativo.idUsuario}</td>
 						<td>${administrativo.username}</td>
-						<td>${administrativo.password}</td>
-						<td>${administrativo.rol}</td>
 						<td>${administrativo.nombreAdmin}</td>
 						<td>${administrativo.emailAdmin}</td>
 					</tr>
 				</c:forEach>
 			</table>
-
-
-			<input type="text" id="filtroMensaje" placeholder="Filtrar por Usuario">
-			<button id="botonFiltrar">Filtrar</button>
-			<div class="container mb-5 pt-4 table-responsive" tab class="row">
-				<table id="tablaMensajes"
-					class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-					<caption>Mensajes por Usuario</caption>
-					<tr>
-						<th>ID</th>
-						<th>Nickname</th>
-						<th>Lugar</th>
-						<th>Mensaje</th>
-						<th>Referencia</th>
-						<th>Fecha y Hora</th>
-					</tr>
-
+			</div>
+			
+			<div class="container mb-5 pt-4 table-responsive">
+				<table id="tablaMensajes" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+				    <caption class="bg-primary text-white py-2 text-center h5">Mensajes por Usuario</caption>
+				    <thead>    
+				        <tr>
+				            <th id="id-header">ID</th>
+				            <th>Nickname</th>
+				            <th>Lugar</th>
+				            <th>Mensaje</th>
+				            <th>Referencia</th>
+				            <th>Fecha y Hora</th>
+				        </tr>
+				    </thead>
+				    
 					<c:forEach var="mensaje" items="${mensaje}">
 						<tr>
 							<td>${mensaje.idUsuario}</td>

@@ -1,45 +1,54 @@
 package cl.bootcamp.maven.proyectoPersonal.models.dao.impl;
 
-import java.sql.Timestamp;
 import java.util.List;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import cl.bootcamp.maven.proyectoPersonal.models.Mensaje;
+import cl.bootcamp.maven.proyectoPersonal.models.Usuarios;
+import cl.bootcamp.maven.proyectoPersonal.models.dao.MensajeDAO;
+import cl.bootcamp.maven.proyectoPersonal.mappers.MensajeRowMapper;
 
 @Repository
-public class MensajeDAOImpl {
+public class MensajeDAOImpl implements MensajeDAO {
 
+	private JdbcTemplate jdbcTemplate;
+	
     @Autowired
-    private JdbcTemplate jdbcTemplate;
+    public void setDataSource(DataSource dataSource) {
+        jdbcTemplate = new JdbcTemplate(dataSource);
+    }
+    
+    @Override
+    public Mensaje findById(int id) {
+        String sql = "SELECT * FROM mensaje WHERE idMensaje = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, new MensajeRowMapper());
+    }
 
-    public void agregarMensaje(Mensaje mensaje) {
-        String sql = "INSERT INTO Mensaje (lugar, mensaje, referencia, fechaCreacion, idUsuario) VALUES (?, ?, ?, ?, ?)";
+    @Override
+    public void save(Mensaje mensaje) {
+        String sql = "INSERT INTO mensaje (lugar, mensaje, referencia, fechaCreacion, idUsuario) VALUES (?, ?, ?, NOW(), ?)";
+        jdbcTemplate.update(sql, mensaje.getLugar(), mensaje.getMensaje(), mensaje.getReferencia(), mensaje.getUsuario().getIdUsuario());
+    }
+
+    @Override
+    public void update(Mensaje mensaje) {
+        String sql = "UPDATE mensaje SET lugar=?, mensaje=?, referencia=?, fechaCreacion=?, idUsuario=? WHERE idMensaje=?";
         jdbcTemplate.update(sql, mensaje.getLugar(), mensaje.getMensaje(), mensaje.getReferencia(),
-                mensaje.getFechaCreacion(), mensaje.getIdUsuario());
+                mensaje.getFechaCreacion(), mensaje.getUsuario().getIdUsuario(), mensaje.getIdMensaje());
     }
 
-    public Mensaje buscarMensajePorId(String idMensaje) {
-        String sql = "SELECT * FROM Mensaje WHERE idMensaje = ?";
-        return jdbcTemplate.queryForObject(sql, new Object[] { idMensaje },
-                new BeanPropertyRowMapper<>(Mensaje.class));
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM mensaje WHERE idMensaje=?";
+        jdbcTemplate.update(sql, id);
     }
 
-    public List<Mensaje> buscarMensajes() {
-        String sql = "SELECT * FROM Mensaje";
-        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Mensaje.class));
-    }
-
-    public void actualizarMensaje(Mensaje mensaje) {
-        String sql = "UPDATE Mensaje SET lugar = ?, mensaje = ?, referencia = ?, fechaCreacion = ? WHERE idMensaje = ?";
-        jdbcTemplate.update(sql, mensaje.getLugar(), mensaje.getMensaje(), mensaje.getReferencia(),
-                mensaje.getFechaCreacion(), mensaje.getIdMensaje());
-    }
-
-    public void eliminarMensaje(String idMensaje) {
-        String sql = "DELETE FROM Mensaje WHERE idMensaje = ?";
-        jdbcTemplate.update(sql, idMensaje);
+    @Override
+    public List<Mensaje> findByUsuario(Usuarios usuario) {
+        String sql = "SELECT * FROM mensaje WHERE id_usuario = ?";
+        return jdbcTemplate.query(sql, new Object[]{usuario.getIdUsuario()}, new MensajeRowMapper());
     }
 
 }

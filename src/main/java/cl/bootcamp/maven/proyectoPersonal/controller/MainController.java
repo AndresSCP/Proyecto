@@ -23,14 +23,15 @@ public class MainController {
 	}
 
 	@GetMapping("/main")
-	public ModelAndView test(HttpServletResponse response, HttpSession session) throws IOException{
-	    String sqlMensaje = "SELECT c.idUsuario, c.username, m.lugar, m.mensaje, m.referencia, m.fechaCreacion "
-	            + "FROM Cliente c "
-	            + "INNER JOIN Mensaje m ON c.idUsuario = m.idUsuario;";  
-	    List<Map<String, Object>> listaMensajes = jdbcTemplate.queryForList(sqlMensaje);
+	public ModelAndView mostrarMensajes(HttpServletResponse response, HttpSession session) throws IOException {
+	    String sql = "SELECT m.idMensaje, m.lugar, m.mensaje, m.referencia, m.fechaCreacion, u.username "
+	            + "FROM Mensaje m "
+	            + "INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario";
+
+	    List<Map<String, Object>> listaMensajes = jdbcTemplate.queryForList(sql);
 
 	    ModelAndView modelAndView = new ModelAndView("main");
-	    modelAndView.addObject("mensaje", listaMensajes);
+	    modelAndView.addObject("mensajes", listaMensajes);
 
 	    // Verificar si el atributo "usuario" existe en la sesión
 	    if (session.getAttribute("usuario") != null) {
@@ -38,7 +39,7 @@ public class MainController {
 	        return modelAndView;
 	    } else {
 	        // La sesión no está iniciada
-	        return new ModelAndView("redirect:/"); // Redirigir a la página de inicio de sesión
+	        return new ModelAndView("redirect:/login"); // Redirigir a la página de inicio de sesión
 	    }
 	}
 }
