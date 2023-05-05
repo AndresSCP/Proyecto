@@ -40,9 +40,9 @@
   </div>
 </div>
 	<div class="container mb-5 pt-4" class="row">
-		<div class="table-responsive">
 			<!-- Tabla Usuarios -->
 			
+			<div class="container mb-5 pt-4 table-responsive">
 			<table id="tablaUsuarios" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
 			  <caption class="bg-primary text-white py-2 text-center h5" id="captionId")>Usuarios</caption>
 			  <thead>
@@ -64,9 +64,9 @@
 			    </c:forEach>
 			  </tbody>
 			</table>
-
+			</div>
 			<!-- Tabla Clientes -->
-
+			<div class="container mb-5 pt-4 table-responsive">
 			<table id="tablaClientes"
 				class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
 				<caption class="bg-primary text-white py-2 text-center h5"class="bg-primary text-white py-2 text-center h5">Clientes</caption>
@@ -99,9 +99,9 @@
 				  </tr>
 				</c:forEach>
 			</table>
-
+			</div>
 			<!-- Tabla Administrativos -->
-
+			<div class="container mb-5 pt-4 table-responsive">
 			<table id="tablaAdministrativos" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
 				<caption class="bg-primary text-white py-2 text-center h5">Administrativos</caption>
 				<tr>
@@ -119,17 +119,13 @@
 					</tr>
 				</c:forEach>
 			</table>
-
-
-			<input type="text" id="filtroMensaje" placeholder="Filtrar por Usuario">
-			<button id="botonFiltrar">Filtrar</button>
-			<div class="container mb-5 pt-4 table-responsive" tab class="row">
-				<table id="tablaMensajes"
-				    class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-				    <thead>
+			</div>
+			
+			<div class="container mb-5 pt-4 table-responsive">
+				<table id="tablaMensajes" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
 				    <caption class="bg-primary text-white py-2 text-center h5">Mensajes por Usuario</caption>
-				        <tr>
 				    <thead>    
+				        <tr>
 				            <th id="id-header">ID</th>
 				            <th>Nickname</th>
 				            <th>Lugar</th>
