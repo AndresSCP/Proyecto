@@ -9,8 +9,8 @@ public class Administrativo extends Usuarios{
 		super();
 	}	
 	
-	public Administrativo(int idUsuario, String username, String password, String rol, String nombreAdmin,String emailAdmin) {
-		super(idUsuario, username, password, rol);
+	public Administrativo(int idUsuario, String username, String password, String nombreAdmin,String emailAdmin) {
+		super(idUsuario, username, password, "administrativo");
 		this.nombreAdmin = nombreAdmin;
 		this.emailAdmin = emailAdmin;
 	}

@@ -5,12 +5,21 @@ CREATE DATABASE proyectobd;
 /*USAR TABLA proyectobd*/
 USE proyectobd;
 
+-- CREATE TABLE users (
+--     username VARCHAR(50) NOT NULL,
+--     password VARCHAR(50) NOT NULL,
+--     enabled TINYINT NOT NULL DEFAULT 1,
+--     role VARCHAR(50) NOT NULL CHECK (role IN ('cliente', 'administrativo')),
+--     PRIMARY KEY (username)
+-- );
+
 -- Creación de la tabla Usuarios
-CREATE TABLE Usuarios (
+CREATE TABLE Users (
   idUsuario INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(50),
   password VARCHAR(50),
-  rol VARCHAR(50) NOT NULL
+  enabled TINYINT NOT NULL DEFAULT 1,
+  role VARCHAR(50) NOT NULL CHECK (role IN ('cliente', 'administrativo')),
 );
 -- Creación de la tabla Cliente que extiende de Usuarios
 CREATE TABLE Cliente (

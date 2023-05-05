@@ -15,7 +15,7 @@ public class ConexionBDTest {
     @BeforeClass
     public static void setUp() throws SQLException {
         // Configura la conexión a la base de datos
-        String url = "jdbc:mysql://localhost:3306/proyectobd"; // Cambia la URL de la base de datos según tu configuración
+        String url = "jdbc:mysql://localhost:3306/proyectobdTEST"; // Cambia la URL de la base de datos según tu configuración
         String username = "root"; // Cambia el nombre de usuario según tu configuración
         String password = "12345"; // Cambia la contraseña según tu configuración
 

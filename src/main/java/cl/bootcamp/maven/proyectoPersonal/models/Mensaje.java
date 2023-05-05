@@ -1,78 +1,76 @@
 package cl.bootcamp.maven.proyectoPersonal.models;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Mensaje {
-	
-	private String idMensaje;
-	private String lugar;
-	private String mensaje;
-	private String referencia;
-	private Timestamp fechaCreacion;
-	private Integer idUsuario;
+    
+    private int idMensaje;
+    private String lugar;
+    private String mensaje;
+    private String referencia;
+    private LocalDateTime fechaCreacion;
+    private Usuarios usuario;
+    
+    // constructores
+    public Mensaje() {}
+    
+    public Mensaje(int idMensaje, String lugar, String mensaje, String referencia, LocalDateTime fechaCreacion, Usuarios usuario) {
+        this.idMensaje = idMensaje;
+        this.lugar = lugar;
+        this.mensaje = mensaje;
+        this.referencia = referencia;
+        this.fechaCreacion = fechaCreacion;
+        this.usuario = usuario;
+    }
+    
+    // getters y setters
+    public int getIdMensaje() {
+        return idMensaje;
+    }
 
-		
-	public Mensaje() {};
-	
-	public Mensaje(String idMensaje, String lugar, String mensaje, String referencia, Timestamp fechaCreacion,Integer idUsuario) {
-		super();
-		this.idMensaje = idMensaje;
-		this.lugar = lugar;
-		this.mensaje = mensaje;
-		this.referencia = referencia;
-		this.fechaCreacion = fechaCreacion;
-		this.idUsuario = idUsuario;
-	}
+    public void setIdMensaje(int idMensaje) {
+        this.idMensaje = idMensaje;
+    }
 
-	public String getIdMensaje() {
-		return idMensaje;
-	}
+    public String getLugar() {
+        return lugar;
+    }
 
-	public void setIdMensaje(String idMensaje) {
-		this.idMensaje = idMensaje;
-	}
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
 
-	public String getLugar() {
-		return lugar;
-	}
+    public String getMensaje() {
+        return mensaje;
+    }
 
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
 
-	public String getMensaje() {
-		return mensaje;
-	}
+    public String getReferencia() {
+        return referencia;
+    }
 
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
-	}
+    public void setReferencia(String referencia) {
+        this.referencia = referencia;
+    }
 
-	public String getReferencia() {
-		return referencia;
-	}
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
 
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
 
-	public Timestamp getFechaCreacion() {
-		return fechaCreacion;
-	}
+    public Usuarios getUsuario() {
+        return usuario;
+    }
 
-	public void setFechaCreacion(Timestamp fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
-	}
-
-	public Integer getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(Integer idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-	
-
+    public void setUsuario(Usuarios usuario) {
+        this.usuario = usuario;
+    }
 }
 
 	

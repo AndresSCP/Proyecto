@@ -12,7 +12,7 @@
 
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	rel="stylesheet">
+	rel="stylesheet" />
 <link rel="stylesheet" href="resources/style.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -23,39 +23,6 @@
 </head>
 <body>
 	<%@include file="components/navbar.jsp"%>
-	<!-- 	<div class="container mb-5 pt-4" class="row">
-		<div class="row d-flex justify-content-center">
-			<button id="boton-formulario" class="btn">
-				<img src="resources/assets/img/alerta.jpg" style="width: 60px;"
-					alt="logo">
-				<h3>Crea una nueva alerta</h3>
-			</button>
-		</div>
-		<div class="container mb-5 pt-4" id="formulario"
-			class="container mb-5 pt-4" class="row">
-			<div>
-				<form action="mensaje" method="POST">
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="lugar" name="lugar"
-							placeholder="Direccion" Required> <label for="lugar">Direccion</label>
-					</div>
-					<div class="form-floating mb-3">
-						<textarea class="form-control"
-							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
-							name="mensaje" Required></textarea>
-						<label for="mensaje">Escribe tu mensaje de alerta!</label>
-					</div>
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="referencia"
-							name="referencia" placeholder="Referencia" Required> <label
-							for="referencia">Escribe una Referencia</label>
-					</div>
-					<button type="submit" class="btn btn-primary">Agregar
-						mensaje</button>
-				</form>
-			</div>
-		</div>
-	</div> -->
 	<div class="container mb-5 pt-4" class="row">
 
 		<div class="row d-flex align-items-center justify-content-center">
@@ -154,15 +121,15 @@
 										<th>Fecha y Hora</th>
 									</tr>
 
-									<c:forEach var="mensaje" items="${mensaje}">
-										<tr>
-											<td>${mensaje.username}</td>
-											<td>${mensaje.lugar}</td>
-											<td>${mensaje.mensaje}</td>
-											<td>${mensaje.referencia}</td>
-											<td>${mensaje.fechaCreacion}</td>
-										</tr>
-									</c:forEach>
+							    <c:forEach var="mensajes" items="${mensajes}">
+							        <tr>
+							            <td>${mensajes.username}</td>
+							            <td>${mensajes.lugar}</td>
+							            <td>${mensajes.mensaje}</td>
+							            <td>${mensajes.referencia}</td>
+							            <td>${mensajes.fechaCreacion}</td>
+							        </tr>
+							    </c:forEach>
 								</table>
 							</div>
 
@@ -183,6 +150,14 @@
 	</div>
 
 	<!-- Scripts -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/44bddf7061.js" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
 		integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
@@ -194,8 +169,6 @@
 		src="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.js"></script>
 	<script
 		src="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 	<script async src="https://platform.twitter.com/widgets.js"
 		charset="utf-8"></script>
 	<script src="resources/scripts/main.js"></script>

@@ -96,6 +96,10 @@ body {
 	}
 }
 
+  caption {
+    caption-side: top;
+  }
+
 .btn-square-md {
 width: 100px !important;
 max-width: 100% !important;

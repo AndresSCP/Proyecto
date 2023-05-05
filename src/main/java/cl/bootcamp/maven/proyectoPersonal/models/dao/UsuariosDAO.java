@@ -1,14 +1,14 @@
 package cl.bootcamp.maven.proyectoPersonal.models.dao;
 
 import java.util.List;
+import org.springframework.stereotype.Repository;
 import cl.bootcamp.maven.proyectoPersonal.models.Usuarios;
 
+@Repository
 public interface UsuariosDAO {
-
-    public void agregar(Usuarios usuario);
-  
-    public void actualizar(Usuarios usuario);   
-    public void eliminar(int idUsuario);  
-    public Usuarios buscarPorId(int idUsuario);  
-    public List<Usuarios> listar();
-}
+	  public Usuarios findById(int id);
+	  public List<Usuarios> findAll();
+	  public void save(Usuarios usuario);
+	  public void update(Usuarios usuario);
+	  public void delete(int id);
+	}
