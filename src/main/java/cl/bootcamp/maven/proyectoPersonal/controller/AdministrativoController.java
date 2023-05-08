@@ -31,25 +31,30 @@ public class AdministrativoController {
         
         String sqlUsuarios = "select * from usuarios;";
         
+        String sqlUsuariosActive = "select * from usuarios;";
         
         String sqlCliente = "SELECT c.nombreCliente, c.apellidoCliente, c.genero, c.emailCliente, u.username, c.idUsuario "
                 + "FROM Cliente c "
                 + "INNER JOIN Usuarios u ON c.idUsuario = u.idUsuario";
+        
         String sqlAdministrativo = "SELECT a.nombreAdmin, a.emailAdmin, u.username, a.idUsuario "
                 + "FROM Administrativo a "
                 + "INNER JOIN Usuarios u ON a.idUsuario = u.idUsuario";
         
         String sqlMensaje = "SELECT m.idMensaje, m.lugar, m.mensaje, m.referencia, m.fechaCreacion, u.username, u.idUsuario "
                 + "FROM Mensaje m "
-                + "INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario";
+                + "INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario "
+                + "ORDER BY u.idUsuario";
         
         List<Map<String, Object>> listaUsuarios = jdbcTemplate.queryForList(sqlUsuarios);
+        List<Map<String, Object>> listaUsuariosActivo = jdbcTemplate.queryForList(sqlUsuariosActive);
         List<Map<String, Object>> listaCliente = jdbcTemplate.queryForList(sqlCliente);
         List<Map<String, Object>> listaAdministrativo = jdbcTemplate.queryForList(sqlAdministrativo);
         List<Map<String, Object>> listaMensajes = jdbcTemplate.queryForList(sqlMensaje);
         
         ModelAndView modelAndView = new ModelAndView("administrativo");
         modelAndView.addObject("usuarios", listaUsuarios);
+        modelAndView.addObject("usuarios", listaUsuariosActivo);
         modelAndView.addObject("cliente", listaCliente);
         modelAndView.addObject("administrativo", listaAdministrativo);
         modelAndView.addObject("mensaje", listaMensajes);
