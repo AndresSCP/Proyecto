@@ -21,7 +21,6 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 
-
 	<!-- Mapa y Feed -->
 	<div class="container mb-5 pt-4" class="row">
 
@@ -40,10 +39,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="container mb-5 pt-4">
+	<!-- <div class="container mb-5 pt-4">
 
 		<div class="row d-flex align-items-center justify-content-center">
-			<!-- Feed -->
+			Feed
 			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
 				<form action="mensaje" method="POST">
 					<div class="form-floating mb-3">
@@ -66,7 +65,7 @@
 						mensaje</button>
 				</form>
 			</div>
-			<!-- Icono -->
+			Icono
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 				<div class="row share-buttons">
 					<div class="col-md-8 col-md-offset-2">
@@ -79,6 +78,32 @@
 				</div>
 			</div>
 		</div>
+	</div> -->
+	<div class="container mb-5 pt-4">
+		<form action="mensaje" method="POST">
+		<div class="row">
+		  <div class="col-md-8">
+		      <div class="form-group">
+					  <input type="text" class="form-control" id="direccion-input" name="lugar"
+					         placeholder="Buscar dirección">
+					  <label for="direccion-input">Direccion</label>
+		      </div>
+		      <div class="form-group">
+						<textarea class="form-control"
+							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
+							name="mensaje" Required></textarea>
+		      </div>
+		      <br>
+		      <div class="form-group">
+						<input type="text" class="form-control" id="referencia"
+							name="referencia" placeholder="Referencia" Required>
+		      </div>
+		  </div>
+		  <div class="col-md-4 d-flex flex-column justify-content-between">
+		    <button type="submit" class="btn btn-lg btn-block btn-danger h-100">Envía tu alerta</button>
+		  </div>
+		</div>
+		    </form>
 	</div>
 	<!-- Feed de Alertas -->
 

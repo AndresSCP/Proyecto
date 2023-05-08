@@ -12,7 +12,7 @@ CREATE TABLE Usuarios (
   password VARCHAR(50),
   enabled TINYINT NOT NULL DEFAULT 1,
   role VARCHAR(50) NOT NULL CHECK (role IN ('cliente', 'administrativo'))
-);
+);ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Creación de la tabla Cliente que extiende de Usuarios
 CREATE TABLE Cliente (
@@ -22,7 +22,7 @@ CREATE TABLE Cliente (
   genero VARCHAR(10),
   emailCliente VARCHAR(50),
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
-);
+);ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Creación de la tabla Administrativo que extiende de Usuarios
 CREATE TABLE Administrativo (
@@ -30,7 +30,7 @@ CREATE TABLE Administrativo (
   nombreAdmin VARCHAR(50),
   emailAdmin VARCHAR(50),
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
-);
+);ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Creación de la tabla Mensaje
 CREATE TABLE Mensaje (
@@ -41,7 +41,7 @@ CREATE TABLE Mensaje (
   fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   idUsuario INT,
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
-);
+);ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Insertar datos en la tabla Usuarios
 INSERT INTO Usuarios (username, password, role)
@@ -102,3 +102,8 @@ END AS TipoUsuario
 FROM Mensaje m
 INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario
 ORDER BY TipoUsuario, m.fechaCreacion DESC;
+
+SELECT Usuarios.*, Cliente.nombreCliente, Cliente.apellidoCliente, Cliente.genero, Cliente.emailCliente, Administrativo.nombreAdmin, Administrativo.emailAdmin
+FROM Usuarios
+LEFT JOIN Cliente ON Usuarios.idUsuario = Cliente.idUsuario
+LEFT JOIN Administrativo ON Usuarios.idUsuario = Administrativo.idUsuario;
