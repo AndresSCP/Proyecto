@@ -39,46 +39,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="container mb-5 pt-4">
-
-		<div class="row d-flex align-items-center justify-content-center">
-			Feed
-			<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-				<form action="mensaje" method="POST">
-					<div class="form-floating mb-3">
-					  <input type="text" class="form-control" id="direccion-input" name="buscar"
-					         placeholder="Buscar dirección">
-					  <label for="direccion-input">Direccion</label>
-					</div>
-					<div class="form-floating mb-3">
-						<textarea class="form-control"
-							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
-							name="mensaje" Required></textarea>
-						<label for="mensaje">Escribe tu mensaje de alerta!</label>
-					</div>
-					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="referencia"
-							name="referencia" placeholder="Referencia" Required> <label
-							for="referencia">Escribe una Referencia</label>
-					</div>
-					<button type="submit" class="btn btn-primary">Agregar
-						mensaje</button>
-				</form>
-			</div>
-			Icono
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-				<div class="row share-buttons">
-					<div class="col-md-8 col-md-offset-2">
-						<div>
-							<button type="button" class="btn btn-danger btn-square-md">
-								Envía tu Alerta
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 	<div class="container mb-5 pt-4">
 		<form action="mensaje" method="POST">
 		<div class="row">

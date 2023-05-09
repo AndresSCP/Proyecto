@@ -31,8 +31,13 @@ public class AdministrativoController {
         
         String sqlUsuarios = "select * from usuarios;";
         
-        String sqlUsuariosActive = "select * from usuarios;";
+        String sqlActivos = "SELECT enabled, COUNT(*) AS cantidad FROM Usuarios GROUP BY enabled";
         
+        String sqlMensajeUsuarios = "SELECT u.idUsuario, u.username, COUNT(*) as cantidad "
+        		+ "FROM Mensaje m "
+        		+ "JOIN Usuarios u ON m.idUsuario = u.idUsuario "
+        		+ "GROUP BY m.idUsuario";
+              
         String sqlCliente = "SELECT c.nombreCliente, c.apellidoCliente, c.genero, c.emailCliente, u.username, c.idUsuario "
                 + "FROM Cliente c "
                 + "INNER JOIN Usuarios u ON c.idUsuario = u.idUsuario";
@@ -47,14 +52,16 @@ public class AdministrativoController {
                 + "ORDER BY u.idUsuario";
         
         List<Map<String, Object>> listaUsuarios = jdbcTemplate.queryForList(sqlUsuarios);
-        List<Map<String, Object>> listaUsuariosActivo = jdbcTemplate.queryForList(sqlUsuariosActive);
+        List<Map<String, Object>> listaActivos = jdbcTemplate.queryForList(sqlActivos);
+        List<Map<String, Object>> listaMensajesUsuarios = jdbcTemplate.queryForList(sqlMensajeUsuarios);
         List<Map<String, Object>> listaCliente = jdbcTemplate.queryForList(sqlCliente);
         List<Map<String, Object>> listaAdministrativo = jdbcTemplate.queryForList(sqlAdministrativo);
         List<Map<String, Object>> listaMensajes = jdbcTemplate.queryForList(sqlMensaje);
         
         ModelAndView modelAndView = new ModelAndView("administrativo");
         modelAndView.addObject("usuarios", listaUsuarios);
-        modelAndView.addObject("usuarios", listaUsuariosActivo);
+        modelAndView.addObject("activos", listaActivos);
+        modelAndView.addObject("mensajesUsuarios",listaMensajesUsuarios);
         modelAndView.addObject("cliente", listaCliente);
         modelAndView.addObject("administrativo", listaAdministrativo);
         modelAndView.addObject("mensaje", listaMensajes);

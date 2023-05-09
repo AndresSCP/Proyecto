@@ -35,16 +35,18 @@ public class ClienteDAOImpl implements ClienteDAO {
         jdbcTemplate.update(sqlCliente, idUsuario, cliente.getNombreCliente(), cliente.getApellidoCliente(), cliente.getGenero(), cliente.getEmailCliente());
     }
 
-    @Override
-    public void actualizarCliente(Cliente cliente) {
-        String sql = "UPDATE Usuarios SET username=?, password=?, role=? WHERE idUsuario=?";
-        jdbcTemplate.update(sql, cliente.getUsername(), cliente.getPassword(), cliente.getRol(), cliente.getIdUsuario());
-
-        sql = "UPDATE Cliente SET nombreCliente=?, apellidoCliente=?, genero=?, emailCliente=? WHERE idUsuario=?";
-        jdbcTemplate.update(sql, cliente.getNombreCliente(), cliente.getApellidoCliente(), cliente.getGenero(),
-                            cliente.getEmailCliente(), cliente.getIdUsuario());
-    }
-
+	
+	  @Override public void actualizarCliente(Cliente cliente) { String sql =
+	  "UPDATE Usuarios SET username=?,WHERE idUsuario=?";
+	  jdbcTemplate.update(sql, cliente.getUsername(),cliente.getIdUsuario());
+	  
+	  sql =
+	  "UPDATE Cliente SET nombreCliente=?, apellidoCliente=?, genero=?, emailCliente=? WHERE idUsuario=?"
+	  ; jdbcTemplate.update(sql, cliente.getNombreCliente(),
+	  cliente.getApellidoCliente(), cliente.getGenero(), cliente.getEmailCliente(),
+	  cliente.getIdUsuario()); }
+	
+    
     @Override
     public void eliminarCliente(int id) {
         String sql = "DELETE FROM Cliente WHERE idUsuario=?";

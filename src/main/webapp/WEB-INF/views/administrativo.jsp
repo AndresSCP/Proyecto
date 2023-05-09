@@ -39,7 +39,28 @@
     </div>
   </div>
 </div>
+<div>
 	<div class="container mb-5 pt-4" class="row">
+	<div>
+		     <table id="tablaActivos" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+			  <caption class="bg-primary text-white py-2 text-center h5" id="captionId")>Informacion</caption>
+			   <thead>
+			        <tr>
+			          <th>Estado(Activo/Inactivo)</th>
+			          <th>Cantidad</th>
+			        </tr>
+			      </thead>
+			      
+			  <tbody>
+				 <c:forEach var="activo" items="${activos}">
+				    <tr>
+				      <td>${activo.enabled == 1 ? 'Activo' : 'Inactivo'}</td>
+				      <td>${activo.cantidad}</td>
+				    </tr>
+				  </c:forEach>
+			  </tbody>
+			</table>	
+	</div>
 			<!-- Tabla Usuarios -->
 			
 			<div class="container mb-5 pt-4 table-responsive">
@@ -65,6 +86,7 @@
 			  </tbody>
 			</table>
 			</div>
+		 
 			<!-- Tabla Clientes -->
 			<div class="container mb-5 pt-4 table-responsive">
 			<table id="tablaClientes"
@@ -146,6 +168,29 @@
 						</tr>
 					</c:forEach>
 
+				</table>
+			</div>
+			<div class="container mb-5 pt-4 table-responsive">
+				<table id="tablaUsuarios"
+					class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
+					<caption class="bg-primary text-white py-2 text-center h5"
+						id="captionId" )>Mensajes por usuario</caption>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Username</th>
+							<th>Cantidad de mensajes</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="mensajeUsuario" items="${mensajesUsuarios}">
+							<tr>
+								<td>${mensajeUsuario.idUsuario}</td>
+								<td>${mensajeUsuario.username}</td>
+								<td>${mensajeUsuario.cantidad}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
 				</table>
 			</div>
 		</div>
