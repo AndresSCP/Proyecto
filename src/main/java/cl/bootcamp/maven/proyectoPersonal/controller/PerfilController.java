@@ -1,5 +1,9 @@
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
+import java.io.IOException;
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,27 +12,38 @@ import org.springframework.web.servlet.ModelAndView;
 import cl.bootcamp.maven.proyectoPersonal.models.*;
 import cl.bootcamp.maven.proyectoPersonal.models.dao.*;
 
+
 @Controller
 public class PerfilController {
 
-	@Autowired
-	private ClienteDAO clienteDao;
+    @Autowired
+    private ClienteDAO clienteDao;
 
-	@RequestMapping(value = "/perfil")
-	public ModelAndView mostrarPerfil(HttpSession session) {
-		// id del usuario actual desde la sesión
-		Integer idUsuario = (Integer) session.getAttribute("idUsuario");
-				
-		// realizar una consulta a la base de datos para obtener los datos del cliente
-		Cliente cliente = clienteDao.obtenerClientePorId(idUsuario);
+    @RequestMapping(value = "/perfil")
+    public ModelAndView mostrarPerfil(HttpServletResponse response, HttpSession session) throws IOException {
+//		Enumeration<String> attributeNames = session.getAttributeNames();
+//		while (attributeNames.hasMoreElements()) {
+//		    String attributeName = attributeNames.nextElement();
+//		    Object attributeValue = session.getAttribute(attributeName);
+//		    System.out.println("Clave: " + attributeName + " - Valor: " + attributeValue);
+//		}
+    	
+        String role = (String) session.getAttribute("role");
+        
+        if (role == null || !role.equals("cliente")) {
+            response.sendRedirect("/proyectoPersonal/components/error403");
+            return null;
+        }
 
-		// pasar los datos del cliente al modelo de vista
-		ModelAndView modelAndView = new ModelAndView("perfil");
-		modelAndView.addObject("cliente", cliente);
+        // id del usuario actual desde la sesión
+        Integer idUsuario = (Integer) session.getAttribute("idUsuario");
+        
+        Cliente cliente = clienteDao.obtenerClientePorId(idUsuario);
 
-		// devolver la vista con los datos del cliente
-		return modelAndView;
+        ModelAndView modelAndView = new ModelAndView("perfil");
+        modelAndView.addObject("cliente", cliente);
 
-	}
+        return modelAndView;
+    }
 
 }

@@ -3,13 +3,13 @@ $(document).ready(function() {
 		event.preventDefault();
 		$.ajax({
 			type: 'POST',
-			url: 'registroCliente',
+			url: 'mensaje',
 			data: $('form').serialize(),
 			success: function(response) {
 				// Aquí agregas la alerta que quieres mostrar
 				alert('El registro fue exitoso');
 				// Rediriges a la página de inicio
-				window.location.href = '/proyectoPersonal/';
+				window.location.href = 'main';
 			},
 		});
 	});

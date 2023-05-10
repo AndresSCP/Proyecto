@@ -7,27 +7,43 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
 import cl.bootcamp.maven.proyectoPersonal.models.Cliente;
 import cl.bootcamp.maven.proyectoPersonal.models.dao.ClienteDAO;
 
 @Controller
 public class PerfilEditarController {
-	
+
 	@Autowired
 	private ClienteDAO clienteDao;
-	
-	@PostMapping("/editarCliente")
-	public String editarCliente(@ModelAttribute Cliente cliente, Model model, HttpSession session) {
-	    // Obtener el id del cliente actual desde la sesión
-	    int idCliente = (int) session.getAttribute("idUsuario");
-	    // Establecer el id del usuario como el id del cliente actual
-	    cliente.setIdUsuario(idCliente);
+
+	@RequestMapping(value = "/editarCliente", method = RequestMethod.POST)
+	public ModelAndView editarCliente(@RequestParam Integer idUsuario,
+	                                   @RequestParam String nombre,
+	                                   @RequestParam String apellido,
+	                                   @RequestParam String nickname,
+	                                   @RequestParam String email,
+	                                   @RequestParam String genero,
+	                                   HttpSession session) {
+	    // Verificar que el usuario está iniciado sesión y es un cliente
+
+	    // Crear un objeto Cliente con los datos del formulario
+	    Cliente cliente = new Cliente();
+	    cliente.setIdUsuario(idUsuario);
+	    cliente.setNombreCliente(nombre);
+	    cliente.setApellidoCliente(apellido);
+	    cliente.setUsername(nickname);
+	    cliente.setEmailCliente(email);
+	    cliente.setGenero(genero);
+
 	    // Actualizar el cliente en la base de datos
 	    clienteDao.actualizarCliente(cliente);
-	    // Agregar un mensaje de éxito en el modelo
-	    model.addAttribute("mensaje", "Perfil actualizado con éxito");
-	    // Devolver la vista de perfil
-	    return "perfil";
-	}
 
+	    // Redirigir al perfil del cliente actualizado
+	    return new ModelAndView("redirect:/perfil");
+	}
 }

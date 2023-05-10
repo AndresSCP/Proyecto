@@ -36,15 +36,16 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
 	
-	  @Override public void actualizarCliente(Cliente cliente) { String sql =
-	  "UPDATE Usuarios SET username=?,WHERE idUsuario=?";
-	  jdbcTemplate.update(sql, cliente.getUsername(),cliente.getIdUsuario());
-	  
-	  sql =
-	  "UPDATE Cliente SET nombreCliente=?, apellidoCliente=?, genero=?, emailCliente=? WHERE idUsuario=?"
-	  ; jdbcTemplate.update(sql, cliente.getNombreCliente(),
-	  cliente.getApellidoCliente(), cliente.getGenero(), cliente.getEmailCliente(),
-	  cliente.getIdUsuario()); }
+    @Override
+    public void actualizarCliente(Cliente cliente) {
+        // Actualiza el campo 'username' en la tabla Usuarios
+        String sql = "UPDATE Usuarios SET username=? WHERE idUsuario=?";
+        jdbcTemplate.update(sql, cliente.getUsername(), cliente.getIdUsuario());
+
+        // Actualiza los campos 'nombreCliente', 'apellidoCliente', 'genero' y 'emailCliente' en la tabla Cliente
+        sql = "UPDATE Cliente SET nombreCliente=?, apellidoCliente=?, genero=?, emailCliente=? WHERE idUsuario=?";
+        jdbcTemplate.update(sql, cliente.getNombreCliente(), cliente.getApellidoCliente(), cliente.getGenero(), cliente.getEmailCliente(), cliente.getIdUsuario());
+    }
 	
     
     @Override
