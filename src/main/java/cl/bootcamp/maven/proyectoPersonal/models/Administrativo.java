@@ -30,6 +30,12 @@ public class Administrativo extends Usuarios{
 	public void setEmailAdmin(String emailAdmin) {
 		this.emailAdmin = emailAdmin;
 	}
+
+	@Override
+	public String toString() {
+		return "Administrativo [nombreAdmin=" + nombreAdmin + ", emailAdmin=" + emailAdmin + "]";
+	}
+	
 	
 	
 }

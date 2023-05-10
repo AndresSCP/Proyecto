@@ -55,4 +55,12 @@ public class UsuariosDaoImpl implements UsuariosDAO {
         Object[] args = {id};
         jdbcTemplate.update(query, args);
     }
+    
+    @Override
+    public void activar(int id) {
+        String query = "UPDATE Usuarios SET enabled = 1 WHERE idUsuario = ?";
+        Object[] args = {id};
+        jdbcTemplate.update(query, args);
+    }
+    
 }

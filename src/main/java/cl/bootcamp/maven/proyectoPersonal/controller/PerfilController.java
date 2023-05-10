@@ -1,8 +1,6 @@
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;
-import java.util.Enumeration;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +19,6 @@ public class PerfilController {
 
     @RequestMapping(value = "/perfil")
     public ModelAndView mostrarPerfil(HttpServletResponse response, HttpSession session) throws IOException {
-//		Enumeration<String> attributeNames = session.getAttributeNames();
-//		while (attributeNames.hasMoreElements()) {
-//		    String attributeName = attributeNames.nextElement();
-//		    Object attributeValue = session.getAttribute(attributeName);
-//		    System.out.println("Clave: " + attributeName + " - Valor: " + attributeValue);
-//		}
-    	
         String role = (String) session.getAttribute("role");
         
         if (role == null || !role.equals("cliente")) {

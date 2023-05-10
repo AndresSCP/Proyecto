@@ -71,6 +71,14 @@ public class Mensaje {
     public void setUsuario(Usuarios usuario) {
         this.usuario = usuario;
     }
+
+	@Override
+	public String toString() {
+		return "Mensaje [idMensaje=" + idMensaje + ", lugar=" + lugar + ", mensaje=" + mensaje + ", referencia="
+				+ referencia + ", fechaCreacion=" + fechaCreacion + ", usuario=" + usuario + "]";
+	}
+    
+    
 }
 
 	

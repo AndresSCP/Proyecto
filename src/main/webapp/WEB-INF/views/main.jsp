@@ -22,9 +22,9 @@
 
 		<div class="row d-flex justify-content-center ">
 			<!-- mapa -->
-		    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " id="map" style="height: 500px"></div>
+		    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " id="map" style="height: 500px "></div>
 			<!-- Feed -->
-			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 order-last">
 				<a class="twitter-timeline" data-lang="es" data-width="500"
 					data-height="500" data-theme="dark"
 					href="https://twitter.com/reddeemergencia?ref_src=twsrc%5Etfw">Tweets

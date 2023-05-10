@@ -99,7 +99,14 @@
 				          <i class="bi bi-trash"></i>
 				        </button>
 				      </form>
+				      <form method="POST" action="activar">
+                            <input type="hidden" name="idUsuario" value="${cliente.idUsuario}">
+                            <button type="submit" class="btn btn-success">
+                            <i class="bi bi-check-square-fill"></i>
+                            </button>
+                        </form>
 				    </td>
+				    
 				  </tr>
 				</c:forEach>
 			</table>

@@ -11,4 +11,5 @@ public interface UsuariosDAO {
 	  public void save(Usuarios usuario);
 	  public void update(Usuarios usuario);
 	  public void delete(int id);
+	  public void activar(int id);
 	}

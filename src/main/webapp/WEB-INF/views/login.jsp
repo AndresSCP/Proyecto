@@ -44,7 +44,7 @@
 							  
 							  <div class="text-center pt-1 mb-5 pb-1"> 
 							    <input class="submit btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Ingresa">
-							    <a class="text-muted" href="main">Olvidaste tu Contraseña?</a>
+							    <!-- <a class="text-muted" href="main">Olvidaste tu Contraseña?</a> -->
 							  </div>
 							  <% if (request.getAttribute("error") != null) { %>
 							    <div class="d-flex justify-content-center pb-4 alert alert-danger">

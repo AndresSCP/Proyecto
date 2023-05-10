@@ -12,7 +12,7 @@
 		</div>
 		<ul class="nav justify-content-center border-bottom pb-3 mb-3">
 		  <li class="nav-item"><a class="nav-link px-2 text-muted" href="https://github.com/AndresSCP"><i class="fab fa-github"></i></a></li>
-		  <li class="nav-item"><a class="nav-link px-2 text-muted" href="https://github.com/AndresSCP"><i class="fab fa-linkedin"></i></a></li>
+		  <li class="nav-item"><a class="nav-link px-2 text-muted" href="https://www.linkedin.com/in/andr%C3%A9s-contreras-pizarro-853a4a9a/"><i class="fab fa-linkedin"></i></a></li>
 		</ul>
 	</footer>
 </div>
