@@ -29,31 +29,34 @@
                             style="width: 100px;" alt="logo">
                           <h4 class="mt-1 mb-5 pb-1">MyAlert!</h4>
                         </div>     
-                        <form action="login" method="POST">
-                          <p>Por favor ingresa a tu cuenta</p>
-        
-                          <div class="form-outline mb-4">
-                            <input class="form-control" id="username" name="username" minlength="3" type="text" placeholder="Escribe tu usuario" required >
-                            <label for="username">Usuario</label>
-                          </div>
-        
-                          <div class="form-outline mb-4">
-                            <input class="form-control" id="password" type="password" name="password" placeholder="Escribe tu contraseña"required>
-                            <label for="password">Contraseña</label> 
-                          </div>
-                      
-                          <div class="text-center pt-1 mb-5 pb-1"> 
-                            <input class="submit btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Ingresa">
-                            <a class="text-muted" href="main">Olvidaste tu Contraseña?</a>
-
-                          </div>
-        
-                          <div class="d-flex justify-content-center pb-4">
-                            <p class="mb-0 me-2">No tienes una cuenta?</p>
-                            <a type="button" class="btn btn-outline-danger" href="registro">Crea una nueva</a>
-                          </div>
-        
-                        </form> 
+							<form action="login" method="POST">
+							  <p>Por favor ingresa a tu cuenta</p>
+							
+							  <div class="form-outline mb-4">
+							    <input class="form-control" id="username" name="username" minlength="3" type="text" placeholder="Escribe tu usuario" required >
+							    <label for="username">Usuario</label>
+							  </div>
+							
+							  <div class="form-outline mb-4">
+							    <input class="form-control" id="password" type="password" name="password" placeholder="Escribe tu contraseña"required>
+							    <label for="password">Contraseña</label> 
+							  </div>
+							  
+							  <div class="text-center pt-1 mb-5 pb-1"> 
+							    <input class="submit btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Ingresa">
+							    <a class="text-muted" href="main">Olvidaste tu Contraseña?</a>
+							  </div>
+							  <% if (request.getAttribute("error") != null) { %>
+							    <div class="d-flex justify-content-center pb-4 alert alert-danger">
+							    <p class="error-message"><%= request.getAttribute("error") %></p>
+							    </div>
+							  <% } %>						
+							  <div class="d-flex justify-content-center pb-4">
+							    <p class="mb-0 me-2">No tienes una cuenta?</p>
+							    <a type="button" class="btn btn-outline-danger" href="registro">Crea una nueva</a>
+							  </div>
+							
+							</form>
                         <hr margin="50px">
 
                         <!-- Footer + boton Jquery -->

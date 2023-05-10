@@ -1,32 +1,60 @@
-// Crear el objeto del mapa y establecer la vista inicial
-const key = 'BGG5O6xVlqhoyQPJ647w';
-const myMap = L.map('myMap').setView([49.2125578, 16.62662018], 14); //starting position
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 14,
+  });
+  const geocoder = new google.maps.Geocoder();
+  let marker = null; // variable para guardar la referencia del marcador
 
-// Agregar una capa al mapa
-const layer = L.marker([49.2125578, 16.62662018]).addTo(myMap);
+  // Crear el buscador
+  const input = document.getElementById("search-input");
+  const autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo("bounds", map);
 
+  // Obtener ubicación actual
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const userLocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      map.setCenter(userLocation);
+      marker = new google.maps.Marker({ // guardar referencia al marcador creado
+        map,
+        position: userLocation,
+      });
+    },
+    () => {
+      // Si no se puede obtener la ubicación del usuario, centrar el mapa en una ubicación predeterminada
+      geocoder.geocode({ address: "Toledo" }).then((response) => {
+        const position = response.results[0].geometry.location;
+        map.setCenter(position);
+        marker = new google.maps.Marker({ // guardar referencia al marcador creado
+          map,
+          position,
+        });
+      });
+    }
+  );
 
-// Agregar una capa de mosaico al mapa
-L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`, { //style URL
-  tileSize: 512,
-  zoomOffset: -1,
-  minZoom: 1,
-  attribution: "href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
-  crossOrigin: true
-}).addTo(myMap);
+  // Escuchar el evento de selección de un lugar en el buscador
+  autocomplete.addListener("place_changed", () => {
+    const place = autocomplete.getPlace();
+    if (!place.geometry || !place.geometry.location) {
+      // Si no se encontró la ubicación, no hacer nada
+      return;
+    }
+    // Mover el mapa hacia la ubicación buscada
+    map.panTo(place.geometry.location);
+    map.setZoom(15);
 
-// Agregar un controlador de búsqueda al mapa
-L.Control.geocoder({ position: 'topright' }).addTo(myMap);
+    // Actualizar la posición del marcador y crear un nuevo marcador en la ubicación buscada
+    const newPosition = place.geometry.location;
+    marker.setPosition(newPosition);
+    new google.maps.Marker({
+      map,
+      position: newPosition,
+    });
+  });
+}
 
-// Configurar la ventana emergente de la capa
-layer.bindPopup('Esta es la dirección: Av. Independencia 123');
-/*layer.bindPopup(content);*/
-layer.on('popupopen', function(e) {
-    var popup = e.popup;
-    var content = popup.getContent();
-    document.getElementById("direccion-input").value = content;
-    console.log("debug contenido: ", content)
-});
-marker.on('click', function(e) {
-  direccionInput.value = e.target.getPopup().getContent();
-});
+window.initMap = initMap;

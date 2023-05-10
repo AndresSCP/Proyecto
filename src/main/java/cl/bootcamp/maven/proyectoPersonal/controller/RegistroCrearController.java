@@ -33,14 +33,19 @@ public class RegistroCrearController {
   public String agregarClienteSubmit(@ModelAttribute Cliente cliente, Model model) {
     cliente.setRol("cliente");
     String sql = "SELECT COUNT(*) FROM Usuarios u JOIN Cliente c ON u.idUsuario = c.idUsuario WHERE u.username = ? OR c.emailCliente = ?";
-    int count = jdbcTemplate.queryForObject(sql, Integer.class, cliente.getUsername(), cliente.getEmailCliente());
-    if (count > 0) {
-      model.addAttribute("mensajeError", "El usuario ya existe en la base de datos");
+    try {
+      int count = jdbcTemplate.queryForObject(sql, Integer.class, cliente.getUsername(), cliente.getEmailCliente());
+      if (count > 0) {
+        model.addAttribute("mensajeError", "El nombre Usuario o Email ya existe intenta otra vez");
+        return "/registro";
+      }
+      clienteDAO.agregarCliente(cliente);
+      model.addAttribute("mensaje", "Cliente agregado exitosamente");
+      return "/registro";
+    } catch (Exception e) {
+      model.addAttribute("mensajeError", "Ha ocurrido un error al intentar registrar al cliente: " + e.getMessage());
       return "/registro";
     }
-    clienteDAO.agregarCliente(cliente);
-    model.addAttribute("mensaje", "Cliente agregado exitosamente");
-    return "/registro";
   }
 
 

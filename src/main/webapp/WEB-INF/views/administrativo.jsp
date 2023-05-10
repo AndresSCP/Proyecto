@@ -41,26 +41,8 @@
 </div>
 <div>
 	<div class="container mb-5 pt-4" class="row">
-	<div>
-		     <table id="tablaActivos" class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-			  <caption class="bg-primary text-white py-2 text-center h5" id="captionId")>Informacion</caption>
-			   <thead>
-			        <tr>
-			          <th>Estado(Activo/Inactivo)</th>
-			          <th>Cantidad</th>
-			        </tr>
-			      </thead>
-			      
-			  <tbody>
-				 <c:forEach var="activo" items="${activos}">
-				    <tr>
-				      <td>${activo.enabled == 1 ? 'Activo' : 'Inactivo'}</td>
-				      <td>${activo.cantidad}</td>
-				    </tr>
-				  </c:forEach>
-			  </tbody>
-			</table>	
-	</div>
+	   
+		
 			<!-- Tabla Usuarios -->
 			
 			<div class="container mb-5 pt-4 table-responsive">
@@ -171,33 +153,102 @@
 				</table>
 			</div>
 			<div class="container mb-5 pt-4 table-responsive">
-				<table id="tablaUsuarios"
-					class="table table-bordered table-striped table-hover rounded-3 mx-auto table-light">
-					<caption class="bg-primary text-white py-2 text-center h5"
-						id="captionId" )>Mensajes por usuario</caption>
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Username</th>
-							<th>Cantidad de mensajes</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="mensajeUsuario" items="${mensajesUsuarios}">
-							<tr>
-								<td>${mensajeUsuario.idUsuario}</td>
-								<td>${mensajeUsuario.username}</td>
-								<td>${mensajeUsuario.cantidad}</td>
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+					
+				<!-- Tablas Misceláneas -->
+
+				<div class="row">
+					<div class="col-12 col-md-12 col-lg-4">
+					  <div class="card">
+					    <div class="card-header bg-primary text-white">
+					      <h5 class="card-title">Mensajes por usuario</h5>
+					    </div>
+					    <div class="card-body p-0">
+					      <div class="table-responsive">
+					        <table class="table table-bordered table-striped table-hover m-0">
+					          <thead>
+					            <tr>
+					              <th>ID</th>
+					              <th>Username</th>
+					              <th>Cantidad de mensajes</th>
+					            </tr>
+					          </thead>
+					          <tbody>
+					            <c:forEach var="mensajeUsuario" items="${mensajesUsuarios}">
+					              <tr>
+					                <td>${mensajeUsuario.idUsuario}</td>
+					                <td>${mensajeUsuario.username}</td>
+					                <td>${mensajeUsuario.cantidad}</td>
+					              </tr>
+					            </c:forEach>
+					          </tbody>
+					        </table>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				<br>
+				<br>
+				<!-- Tabla cantidad de usuarios activos e inactivos-->
+				<div class="col-6 col-md-6 col-lg-4">
+					<div class="card">
+						<div class="card-header bg-primary text-white">
+							<h5 class="card-title">Usuarios Activos</h5>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-striped table-hover">
+									<thead>
+										<tr>
+											<th>Estado(Activo/Inactivo)</th>
+											<th>Cantidad</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="activo" items="${activos}">
+											<tr>
+												<td>${activo.enabled == 1 ? 'Activos' : 'Inactivos'}</td>
+												<td>${activo.cantidad}</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-md-6 col-lg-4">
+					<div class="card">
+						<div class="card-header bg-primary text-white">
+							<h5 class="card-title">Cantidad de mensajes</h5>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered table-striped table-hover">
+								<thead>
+									<tr>
+										<th>Cantidad de Mensajes total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="cantidadMensajes" items="${cantidadMensajes}">
+										<tr>
+											<td>${cantidadMensajes.total_mensajes}</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>	
 			</div>
 		</div>
 	</div>
 	<!-- Footer -->
 	<%@include file="components/footer.jsp"%>
 	<!-- Scripts -->
+    <script src="https://kit.fontawesome.com/44bddf7061.js" crossorigin="anonymous"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 	<script

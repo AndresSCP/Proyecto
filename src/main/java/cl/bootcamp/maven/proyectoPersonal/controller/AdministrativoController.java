@@ -35,11 +35,12 @@ public class AdministrativoController {
     		 response.sendRedirect("/proyectoPersonal/components/error403");
              return null;
          } 
-
         
         String sqlUsuarios = "select * from usuarios;";
         
         String sqlActivos = "SELECT enabled, COUNT(*) AS cantidad FROM Usuarios GROUP BY enabled";
+        
+        String sqlCantidadMensajes = "SELECT COUNT(*) AS total_mensajes FROM Mensaje;";
         
         String sqlMensajeUsuarios = "SELECT u.idUsuario, u.username, COUNT(*) as cantidad "
         		+ "FROM Mensaje m "
@@ -61,6 +62,7 @@ public class AdministrativoController {
         
         List<Map<String, Object>> listaUsuarios = jdbcTemplate.queryForList(sqlUsuarios);
         List<Map<String, Object>> listaActivos = jdbcTemplate.queryForList(sqlActivos);
+        List<Map<String, Object>> listaCantidadMensajes = jdbcTemplate.queryForList(sqlCantidadMensajes);
         List<Map<String, Object>> listaMensajesUsuarios = jdbcTemplate.queryForList(sqlMensajeUsuarios);
         List<Map<String, Object>> listaCliente = jdbcTemplate.queryForList(sqlCliente);
         List<Map<String, Object>> listaAdministrativo = jdbcTemplate.queryForList(sqlAdministrativo);
@@ -69,6 +71,7 @@ public class AdministrativoController {
         ModelAndView modelAndView = new ModelAndView("administrativo");
         modelAndView.addObject("usuarios", listaUsuarios);
         modelAndView.addObject("activos", listaActivos);
+        modelAndView.addObject("cantidadMensajes", listaCantidadMensajes);
         modelAndView.addObject("mensajesUsuarios",listaMensajesUsuarios);
         modelAndView.addObject("cliente", listaCliente);
         modelAndView.addObject("administrativo", listaAdministrativo);

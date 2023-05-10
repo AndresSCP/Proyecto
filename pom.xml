@@ -107,6 +107,12 @@
 		    <artifactId>spring-security-config</artifactId>
 		    <version>${spring.version}</version>
 		</dependency>
+		<dependency>
+		  <groupId>com.google.maps</groupId>
+		  <artifactId>google-maps-services</artifactId>
+		  <version>0.9.4</version>
+		</dependency>
+
 		
 	</dependencies>
 

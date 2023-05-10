@@ -35,7 +35,7 @@ CREATE TABLE Administrativo (
 -- Creación de la tabla Mensaje
 CREATE TABLE Mensaje (
   idMensaje INT PRIMARY KEY AUTO_INCREMENT,
-  lugar VARCHAR(50),
+  lugar VARCHAR(150),
   mensaje TEXT,
   referencia VARCHAR(50),
   fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -129,3 +129,5 @@ SELECT Usuarios.*, Cliente.nombreCliente, Cliente.apellidoCliente, Cliente.gener
 FROM Usuarios
 LEFT JOIN Cliente ON Usuarios.idUsuario = Cliente.idUsuario
 LEFT JOIN Administrativo ON Usuarios.idUsuario = Administrativo.idUsuario;
+
+SELECT COUNT(*) AS total_mensajes FROM Mensaje

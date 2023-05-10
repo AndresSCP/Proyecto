@@ -11,10 +11,6 @@
 <title>Principal</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin="" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@1.13.0/dist/Control.Geocoder.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch/dist/leaflet-geosearch.min.css" />
 <link rel="stylesheet" href="resources/css/style.css">
 </head>
 
@@ -26,10 +22,7 @@
 
 		<div class="row d-flex justify-content-center ">
 			<!-- mapa -->
-
-					<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " id="myMap" style="height: 500px"></div>
-					<div id="search-container"></div>
-
+		    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 " id="map" style="height: 500px"></div>
 			<!-- Feed -->
 			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
 				<a class="twitter-timeline" data-lang="es" data-width="500"
@@ -44,8 +37,8 @@
 		<div class="row">
 		  <div class="col-md-8">
 		      <div class="form-group">
-					  <input type="text" class="form-control" id="direccion-input" name="lugar"
-					         placeholder="Buscar dirección">
+					  <input type="text" class="form-control" id="search-input" name="lugar"
+					         placeholder="Buscar lugar o dirección">				         
 					  <label for="direccion-input">Direccion</label>
 		      </div>
 		      <div class="form-group">
@@ -127,6 +120,8 @@
 
 
 	<!-- Scripts -->
+	<!-- JQuery -->		
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 	<!-- Boostrap -->	
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -137,13 +132,14 @@
 		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/44bddf7061.js" crossorigin="anonymous"></script>
-    <!-- Leaflet -->		
-	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-    <script src="https://unpkg.com/leaflet-geosearch/dist/leaflet-geosearch.min.js"></script>
-	<!-- Scripts Personalizados -->	
+    <!-- Mapa -->
+    		
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places"
+      defer
+    ></script>
+	<!-- Scripts Personalizados -->
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-	<script src="resources/scripts/main.js"></script>
 	<script src="resources/scripts/scriptTablaMain.js"></script>
 	<script src="resources/scripts/scriptMapa.js"></script>
 </body>
