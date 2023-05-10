@@ -29,3 +29,4 @@ function filtrarTabla() {
 document.getElementById("datatable-search-input").addEventListener("keyup", filtrarTabla);/**
  * 
  */
+

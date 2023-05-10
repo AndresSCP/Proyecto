@@ -34,30 +34,32 @@
 	</div>
 	<div class="container mb-5 pt-4">
 		<form action="mensaje" method="POST">
-		<div class="row">
-		  <div class="col-md-8">
-		      <div class="form-group">
-					  <input type="text" class="form-control" id="search-input" name="lugar"
-					         placeholder="Buscar lugar o dirección">				         
-					  <label for="direccion-input">Direccion</label>
-		      </div>
-		      <div class="form-group">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="form-group">
+						<input type="text" class="form-control" id="search-input"
+							name="lugar" placeholder="Buscar lugar o dirección" required> <label
+							for="direccion-input">Direccion</label>
+					</div>
+					<div class="form-group">
 						<textarea class="form-control"
 							placeholder="Escribe tu mensaje de alerta!" id="mensaje"
 							name="mensaje" Required></textarea>
-		      </div>
-		      <br>
-		      <div class="form-group">
+					</div>
+					<br>
+					<div class="form-group">
 						<input type="text" class="form-control" id="referencia"
 							name="referencia" placeholder="Referencia" Required>
-		      </div>
-		  </div>
-		  <div class="col-md-4 d-flex flex-column justify-content-between">
-		    <button type="submit" class="btn btn-lg btn-block btn-danger h-100">Envía tu alerta</button>
-		  </div>
-		</div>
-		    </form>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex flex-column justify-content-between">
+					<button type="submit" class="btn btn-lg btn-block btn-danger h-100" id="enviar-btn">Envía
+						tu alerta</button>
+				</div>
+			</div>
+		</form>
 	</div>
+    
 	<!-- Feed de Alertas -->
 
 	<div class="container mb-5 pt-4" class="row">
@@ -133,15 +135,13 @@
 		crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/44bddf7061.js" crossorigin="anonymous"></script>
     <!-- Mapa -->
-    		
-	<script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places"
-      defer
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=places" defer></script>
 	<!-- Scripts Personalizados -->
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 	<script src="resources/scripts/scriptTablaMain.js"></script>
 	<script src="resources/scripts/scriptMapa.js"></script>
+	<script src="resources/scripts/scriptMensaje.js"></script>
+
 </body>
 <!-- Footer -->
 <%@include file="components/footer.jsp"%>
