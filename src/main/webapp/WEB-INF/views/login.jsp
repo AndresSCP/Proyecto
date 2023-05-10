@@ -45,6 +45,7 @@
                           <div class="text-center pt-1 mb-5 pb-1"> 
                             <input class="submit btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Ingresa">
                             <a class="text-muted" href="main">Olvidaste tu Contraseña?</a>
+
                           </div>
         
                           <div class="d-flex justify-content-center pb-4">

@@ -27,6 +27,14 @@ public class AdministrativoController {
     @RequestMapping(value="/administrativo")
     @PreAuthorize("hasRole('administrativo')")
     public ModelAndView mostrarAdministrativo(HttpServletResponse response, HttpSession session) throws IOException {
+    	
+    	String role = (String) session.getAttribute("role");
+    	
+    	 if (role == null || !role.equals("administrativo")) {
+             // Si el usuario no tiene el rol de administrativo, redirigir a una página de error o denegado
+    		 response.sendRedirect("/proyectoPersonal/components/error403");
+             return null;
+         } 
 
         
         String sqlUsuarios = "select * from usuarios;";

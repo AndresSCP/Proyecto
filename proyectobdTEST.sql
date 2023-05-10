@@ -8,7 +8,7 @@ USE proyectobdTEST;
 -- Creación de la tabla Usuarios
 CREATE TABLE Usuarios (
   idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(50),
+  username VARCHAR(50) UNIQUE,
   password VARCHAR(50),
   enabled TINYINT NOT NULL DEFAULT 1,
   role VARCHAR(50) NOT NULL CHECK (role IN ('cliente', 'administrativo'))
@@ -20,15 +20,15 @@ CREATE TABLE Cliente (
   nombreCliente VARCHAR(50),
   apellidoCliente VARCHAR(50),
   genero VARCHAR(10),
-  emailCliente VARCHAR(50),
+  emailCliente VARCHAR(50) UNIQUE,
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
 );
 
 -- Creación de la tabla Administrativo que extiende de Usuarios
 CREATE TABLE Administrativo (
   idUsuario INT PRIMARY KEY,
-  nombreAdmin VARCHAR(50),
-  emailAdmin VARCHAR(50),
+  nombreAdmin VARCHAR(50) UNIQUE,
+  emailAdmin VARCHAR(50) UNIQUE,
   FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
 );
 
@@ -120,6 +120,10 @@ END AS TipoUsuario
 FROM Mensaje m
 INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario
 ORDER BY TipoUsuario, m.fechaCreacion DESC;
+
+SELECT *
+FROM Usuarios U
+JOIN Cliente C ON U.idUsuario = C.idUsuario;
 
 SELECT Usuarios.*, Cliente.nombreCliente, Cliente.apellidoCliente, Cliente.genero, Cliente.emailCliente, Administrativo.nombreAdmin, Administrativo.emailAdmin
 FROM Usuarios

@@ -31,33 +31,33 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Datos de Perfil</h4>
                 </div>
-                
+                <input type="hidden" class="form-control" name="idUsuario" value="${cliente.idUsuario}">
                 <div class="row mt-2">
                     <div class="col-md-6">
 					    <label class="labels">Nombre</label>
-					    <input type="text" class="form-control" placeholder="Nombre" value="${cliente.nombreCliente}">
+					    <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="${cliente.nombreCliente}">
 					    <input type="hidden" id="nombreCliente" name="nombreCliente" value="${cliente.nombreCliente}" />
 					</div>
                     <div class="col-md-6">
 	                    <label class="labels">Apellido</label>
-	                    <input type="text" class="form-control" placeholder="Apellido" value="${cliente.apellidoCliente}">
+	                    <input type="text" class="form-control" placeholder="Apellido" name="apellido"  value="${cliente.apellidoCliente}">
 	                    <input type="hidden" id="apellidoCliente" name="apellidoCliente" value="${cliente.apellidoCliente}" />
                     </div>
                 </div>   
                 <div class="row mt-3">
                     <div class="col-md-12">
 	                    <label class="labels">Nickname</label>           
-	                    <input type="text" class="form-control" placeholder="username" value="${cliente.username}">
+	                    <input type="text" class="form-control" placeholder="username" name="nickname" value="${cliente.username}">
 		                <input type="hidden" id="username" name="username" value="${cliente.username}" />
 		            </div>
                     <div class="col-md-12">
 	                    <label class="labels">Email</label>
-	                    <input type="text" class="form-control" placeholder="Email" value="${cliente.emailCliente}">
+	                    <input type="text" class="form-control" placeholder="Email" name="email" value="${cliente.emailCliente}">
 		                <input type="hidden" id="Email" name="Email" value="${cliente.emailCliente}"/>
 		            </div>		                
                     <div class="col-md-12">
 	                    <label class="labels">Genero</label>
-	                    <input type="text" class="form-control" placeholder="Genero" value="${cliente.genero}">
+	                    <input type="text" class="form-control" placeholder="Genero" name="genero" value="${cliente.genero}">
 		                <input type="hidden" id="Genero" name="Genero" value="${cliente.genero}"/>
                     </div>                  
                    <div class="mt-5 text-center">

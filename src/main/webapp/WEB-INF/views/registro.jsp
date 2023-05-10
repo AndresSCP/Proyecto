@@ -4,13 +4,12 @@
 <meta charset="UTF-8">
 <title>Registro de Cliente</title>
 <!-- Enlaces a las librerías de Bootstrap -->
+<link rel="stylesheet" href="resources/style.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/style.css">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/styleRegistro.css">
 </head>
 <body>
 <section class="vh-100 bg-image">
@@ -24,6 +23,7 @@
 								<div class="container mb-5 pt-4" class="row">
 									<h2 class="text-uppercase text-center mb-5" id="TituloRegistro">Crea
 										una cuenta</h2>
+									<p class="hint-text">Crea tu cuenta. Es gratis! solo toma un minuto.</p>
 									<form action="registroCliente" method="POST">
 										<div class="form-group">
 											<label for="username">Nickname:</label> <input type="text"
@@ -66,12 +66,13 @@
 											</label>
 										</div> -->
 										<button type="submit" class="btn btn-primary">Registrarse</button>
-<!-- 										<div class="text-center">
-											Button HTML (to Trigger Modal)
-											<a href="#myModal" class="trigger-btn" data-toggle="modal">Click
-												to Open Confirm Modal</a>
-										</div> -->
-										<p class="text-center text-muted mt-5 mb-0">
+										<% String errorMessage = "Nombre de usuario o contraseña incorrectos"; %>
+				                            <% if (errorMessage != null) { %>
+											  <div class="alert alert-danger">
+											    <strong>Error:</strong> <%= errorMessage %>
+											  </div>
+											<% } %>
+											<p class="text-center text-muted mt-5 mb-0">
 											Ya tienes una cuenta? <a href="/proyectoPersonal/"
 												class="fw-bold text-body"> Login aqui </a>
 										</p>

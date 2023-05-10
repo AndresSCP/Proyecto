@@ -1,6 +1,7 @@
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
@@ -24,6 +25,12 @@ public class MainController {
 
 	@GetMapping("/main")
 	public ModelAndView mostrarMensajes(HttpServletResponse response, HttpSession session) throws IOException {
+//		Enumeration<String> attributeNames = session.getAttributeNames();
+//		while (attributeNames.hasMoreElements()) {
+//		    String attributeName = attributeNames.nextElement();
+//		    Object attributeValue = session.getAttribute(attributeName);
+//		    System.out.println("Clave: " + attributeName + " - Valor: " + attributeValue);
+//		}
 	    String sql = "SELECT m.idMensaje, m.lugar, m.mensaje, m.referencia, m.fechaCreacion, u.username "
 	            + "FROM Mensaje m "
 	            + "INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario";
