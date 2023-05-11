@@ -36,13 +36,39 @@ A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion d
 
 6. Utilización general del lenguaje, sintaxis, selección de tipos de datos, sentencias lógicas, expresiones, operaciones, comparaciones.
 
-![rb6](https://github.com/AndresSCP/Proyecto/assets/121947963/4c841b58-ad01-4857-a7ac-9f5eb76b86a7) LoginController.java
+![rb6](https://github.com/AndresSCP/Proyecto/assets/121947963/4c841b58-ad01-4857-a7ac-9f5eb76b86a7) 
+LoginController.java
 
-7. Utilización de clases, encapsulamiento y resposabilidad única.
-![rb7-1](https://github.com/AndresSCP/Proyecto/assets/121947963/bb492c4d-daba-4482-9565-2a33a0368653)
-![rb7-2](https://github.com/AndresSCP/Proyecto/assets/121947963/dbaf9f37-9498-44f6-a490-2477da82d99e)
+7. Utilización de sentencias repetitivas.
 
-8. Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario.
+8. Utilización de clases, encapsulamiento y resposabilidad única. 
+
+9.Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario. 
+
+10. Convenciones y estilos de programación.
+
+11. Utilización de unidades de prueba.
+
+- Página web html y css
+
+12. Utilización de tags html, estilos y responsividad.
+13. Utilización de Bootstrap.
+
+- Spring MVC
+
+14. Utilización de Controllers.
+15. Utilización de vistas JSP y Taglib.
+16. Creación Servicio Spring.
+17. Creación DAO acceso a datos.
+18. Creación del proyecto y configuración.
+19. Funcionamiento general del aplicativo.
+
+- API Rest
+
+20.  Creación servicio Rest.
+
+
+
 
 
 
