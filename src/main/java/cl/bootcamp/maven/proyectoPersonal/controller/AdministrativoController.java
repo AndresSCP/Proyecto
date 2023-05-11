@@ -59,6 +59,12 @@ public class AdministrativoController {
                 + "INNER JOIN Usuarios u ON m.idUsuario = u.idUsuario "
                 + "ORDER BY u.idUsuario";
         
+        String sqlSelectUsuariosMensaje = "SELECT Usuarios.username, Cliente.nombreCliente, Cliente.apellidoCliente, Mensaje.* " +
+                "FROM Usuarios " +
+                "JOIN Cliente ON Usuarios.idUsuario = Cliente.idUsuario " +
+                "JOIN Mensaje ON Usuarios.idUsuario = Mensaje.idUsuario " +
+                "WHERE Usuarios.username = ?";
+        
         List<Map<String, Object>> listaUsuarios = jdbcTemplate.queryForList(sqlUsuarios);
         List<Map<String, Object>> listaActivos = jdbcTemplate.queryForList(sqlActivos);
         List<Map<String, Object>> listaCantidadMensajes = jdbcTemplate.queryForList(sqlCantidadMensajes);
@@ -66,6 +72,7 @@ public class AdministrativoController {
         List<Map<String, Object>> listaCliente = jdbcTemplate.queryForList(sqlCliente);
         List<Map<String, Object>> listaAdministrativo = jdbcTemplate.queryForList(sqlAdministrativo);
         List<Map<String, Object>> listaMensajes = jdbcTemplate.queryForList(sqlMensaje);
+        List<Map<String, Object>> listaSeleccionMensajes = jdbcTemplate.queryForList(sqlSelectUsuariosMensaje);
         
         ModelAndView modelAndView = new ModelAndView("administrativo");
         modelAndView.addObject("usuarios", listaUsuarios);
@@ -75,6 +82,7 @@ public class AdministrativoController {
         modelAndView.addObject("cliente", listaCliente);
         modelAndView.addObject("administrativo", listaAdministrativo);
         modelAndView.addObject("mensaje", listaMensajes);
+        modelAndView.addObject("mensajeSelect", listaSeleccionMensajes);
         
         return modelAndView;     
     }

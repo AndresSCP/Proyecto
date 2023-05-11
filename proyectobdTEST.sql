@@ -130,4 +130,10 @@ FROM Usuarios
 LEFT JOIN Cliente ON Usuarios.idUsuario = Cliente.idUsuario
 LEFT JOIN Administrativo ON Usuarios.idUsuario = Administrativo.idUsuario;
 
-SELECT COUNT(*) AS total_mensajes FROM Mensaje
+SELECT COUNT(*) AS total_mensajes FROM Mensaje;
+
+SELECT Usuarios.username, Cliente.nombreCliente, Cliente.apellidoCliente, Mensaje.*
+FROM Usuarios
+JOIN Cliente ON Usuarios.idUsuario = Cliente.idUsuario
+JOIN Mensaje ON Usuarios.idUsuario = Mensaje.idUsuario
+WHERE Usuarios.username = 'Usuario1';

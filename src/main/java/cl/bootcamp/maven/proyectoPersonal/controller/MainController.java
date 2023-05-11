@@ -1,7 +1,12 @@
+/**
+ * @author Andres Contreras
+ * @Version 1.0
+ * 
+ * Controlador del sitio main del proyecto, trae los mensajes desde la base de datos y verificar que el usuario este en la sesion. 
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
@@ -18,11 +23,17 @@ public class MainController {
 	
 	private JdbcTemplate jdbcTemplate;
 
+	/**
+	 * Crea una nueva instancia del controlador principal con la fuente de datos especificada.
+	 */
 	@Autowired
 	public MainController (DataSource dataSource){
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
+	/**
+	 * Maneja la solicitud GET para la página principal y muestra los mensajes.
+	 */
 	@GetMapping("/main")
 	public ModelAndView mostrarMensajes(HttpServletResponse response, HttpSession session) throws IOException {
 		

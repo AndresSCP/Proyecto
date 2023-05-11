@@ -19,8 +19,32 @@ Documentacion:
  
 A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion del proyecto:
 
+- Consulta a la base de datos
+
 1. Selecciona las columnas requeridas para presentar la información solicitada. 
 ![rb1](https://github.com/AndresSCP/Proyecto/assets/121947963/43ee6459-b990-49e5-a644-b5e48d8d62df)
+2. Utiliza JOIN para relacionar la información de distintas tablas.
+![rb2](https://github.com/AndresSCP/Proyecto/assets/121947963/1d00ca04-4166-4d5a-85b9-7e7ead7f5a20)
+3.Utiliza WHERE para filtrar la información requerida.
+![rb3](https://github.com/AndresSCP/Proyecto/assets/121947963/a02122c7-3f8d-4581-ae3f-565511ff3ac7)
+4.Utiliza cláusulas de ordenamiento para presentar la información.
+![rb4](https://github.com/AndresSCP/Proyecto/assets/121947963/5c72b27d-14b3-4665-b182-6492a126d026)
+5.Utiliza cláusulas de agrupación de información para obtener datos agregados.
+![rb5](https://github.com/AndresSCP/Proyecto/assets/121947963/8c19d3ab-480f-48d4-9f48-21342b54bb24)
+
+- Algoritmo de cálculo y unidades de prueba
+
+6. Utilización general del lenguaje, sintaxis, selección de tipos de datos, sentencias lógicas, expresiones, operaciones, comparaciones.
+
+![rb6](https://github.com/AndresSCP/Proyecto/assets/121947963/4c841b58-ad01-4857-a7ac-9f5eb76b86a7) LoginController.java
+
+7. Utilización de clases, encapsulamiento y resposabilidad única.
+![rb7-1](https://github.com/AndresSCP/Proyecto/assets/121947963/bb492c4d-daba-4482-9565-2a33a0368653)
+![rb7-2](https://github.com/AndresSCP/Proyecto/assets/121947963/dbaf9f37-9498-44f6-a490-2477da82d99e)
+
+8. Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario.
+
+
 
 
 
