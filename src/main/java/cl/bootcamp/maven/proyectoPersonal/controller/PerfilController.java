@@ -1,3 +1,8 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que muestra la vista de perfil de usuario mediante elmtodo obtenerPorID y admite la vista solo a clientes.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;

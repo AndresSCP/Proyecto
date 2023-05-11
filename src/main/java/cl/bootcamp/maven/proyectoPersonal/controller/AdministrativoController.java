@@ -1,3 +1,10 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * 
+ * Controlador que muestra la vista de Administrativo, restringe la vista para sea solo para roles administrativos y trae las listas
+ * desde la base de datos.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;

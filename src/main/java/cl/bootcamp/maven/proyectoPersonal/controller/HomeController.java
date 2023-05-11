@@ -1,3 +1,9 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * 
+ * Controlador que muestra la vista del login/home del sitio.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import org.springframework.stereotype.Controller;

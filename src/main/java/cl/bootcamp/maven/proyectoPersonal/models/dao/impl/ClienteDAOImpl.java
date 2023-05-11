@@ -1,3 +1,8 @@
+/**
+@autor Andres Contreras
+@version 1.0
+La clase ClienteDAOImpl implementa la interfaz ClienteDAO y define las operaciones CRUD para objetos Cliente en una base de datos.
+*/
 package cl.bootcamp.maven.proyectoPersonal.models.dao.impl;
 
 import java.sql.PreparedStatement;

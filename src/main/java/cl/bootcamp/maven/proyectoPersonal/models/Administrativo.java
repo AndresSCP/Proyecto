@@ -1,7 +1,9 @@
 /**
  * @author Andres Contreras
  * @Version 1.0
- */
+ * La clase Administrativo representa un usuario administrativo en el sistema.
+ * Esta clase extiende la clase Usuarios.
+ *  */
 package cl.bootcamp.maven.proyectoPersonal.models;
 
 public class Administrativo extends Usuarios{
@@ -9,6 +11,9 @@ public class Administrativo extends Usuarios{
 	private String nombreAdmin;
 	private String emailAdmin;
 	
+	/**
+	 * Constructores de la clase Administrativo
+	 */
 	public Administrativo() {
 		super();
 	}	
@@ -19,9 +24,13 @@ public class Administrativo extends Usuarios{
 		this.emailAdmin = emailAdmin;
 	}
 
+	/**
+	 * Metodos Getter y Setter.
+	 */
 	public String getNombreAdmin() {
 		return nombreAdmin;
 	}
+
 
 	public void setNombreAdmin(String nombreAdmin) {
 		this.nombreAdmin = nombreAdmin;
@@ -35,11 +44,13 @@ public class Administrativo extends Usuarios{
 		this.emailAdmin = emailAdmin;
 	}
 
+	/**
+	 * Devuelve una representación de cadena del objeto Administrativo.
+	 *
+	 * @return una cadena que representa el objeto Administrativo.
+	 */
 	@Override
 	public String toString() {
 		return "Administrativo [nombreAdmin=" + nombreAdmin + ", emailAdmin=" + emailAdmin + "]";
 	}
-	
-	
-	
 }

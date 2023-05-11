@@ -1,3 +1,8 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que permite el cambio de los datos de un usuario tipo cliente mediante formulario.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import javax.servlet.http.HttpSession;

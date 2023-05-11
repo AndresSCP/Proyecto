@@ -1,3 +1,8 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que utiliza el metodo eliminar usuario que cambio el estado de un usuarios de acitvo a inactivo.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;

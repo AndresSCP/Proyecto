@@ -1,3 +1,9 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * 
+ * Controlador que muestra el formulario de registro de clientes.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.io.IOException;

@@ -1,3 +1,8 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que utiliza el metodo activar usuario que cambio el estado de un usuarios de inactivo a activo.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;

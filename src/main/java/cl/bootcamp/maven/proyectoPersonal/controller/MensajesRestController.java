@@ -1,3 +1,9 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que permite el uso de api rest para mostrar mensajes por usuario.
+ */
+
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import java.util.List;

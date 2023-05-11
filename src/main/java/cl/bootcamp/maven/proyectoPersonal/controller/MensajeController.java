@@ -1,3 +1,8 @@
+/**
+ * @author Andres Contreras
+ * @version 1.0
+ * Controlador que guarda mensajes por usuario en sesion utilizndo el metodo findById y Save.
+ */
 package cl.bootcamp.maven.proyectoPersonal.controller;
 
 import javax.servlet.http.HttpSession;
