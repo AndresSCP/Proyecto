@@ -20,7 +20,7 @@ Documentacion:
 A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion del proyecto:
 
 1. Selecciona las columnas requeridas para presentar la información solicitada. 
-[rb1](https://github.com/AndresSCP/Proyecto/assets/121947963/43ee6459-b990-49e5-a644-b5e48d8d62df)
+![rb1](https://github.com/AndresSCP/Proyecto/assets/121947963/43ee6459-b990-49e5-a644-b5e48d8d62df)
 
 
 
