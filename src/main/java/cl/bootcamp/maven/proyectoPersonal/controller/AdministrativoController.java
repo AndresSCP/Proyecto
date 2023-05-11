@@ -25,7 +25,6 @@ public class AdministrativoController {
     }
     
     @RequestMapping(value="/administrativo")
-    @PreAuthorize("hasRole('administrativo')")
     public ModelAndView mostrarAdministrativo(HttpServletResponse response, HttpSession session) throws IOException {
     	
     	String role = (String) session.getAttribute("role");
