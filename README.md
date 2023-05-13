@@ -9,30 +9,67 @@ El objetivo principal de la aplicación es proporcionar a los usuarios un medio 
 
 La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de usar, lo que permite a los usuarios publicar y visualizar contenido de manera rápida y sencilla. Tambien cuenta con un modulo administrativo para que este tipo de usuarios pueda obtener informacion relevante de la aplicacion, como cantidad de usuarios,mensajes su actividad e informacion de la cuenta.
 
-Documentacion:
+## Indice
+1. Caracteristicas tecnicas del proyecto.
+2. Instrucciones de instalacion.
+3. Documentacion del proyecto segun la rubrica de evaluacion.
+
+### Caracteristicas tecnicas del proyecto
 
 - El proyecto fue realizado con IDE Eclipse Enterprise.
 - Se utilizo el server Apache Tomcat 9.
 - Para tener mejoras en el estilo visual y funcionalidad se utilizo la biblicoteca y script de Boostrap y estilos personalizados Css, asi como tambien Jquery y JavaScript.
 - Se integro la api de Google Maps para uso de localizacion de direcciones.
+- Se añadió un feed de twitter, este contiene informacion acorde a el tema de la aplicacion.
 - La base de datos (proyectobdTEST) se encuentra dentro del proyecto y se construyo en MySQL, dentro de esta se encuentra el script que construye las tablas y se insertan datos de prueba para su visualizacion, asi como tambien distintas queries que sirven para observar el correcto funcionamiento y relacion entre las tablas.
+
+### Instrucciones de instalacion
+
+- Iniciar el script de MySQL de la base de datos que esta dentro del proyecto llamado proyectobdTEST.sql y seleccionar el esquema si es que no se ha seleccionado automaticamente.
+- En el IDE iniciar el proyecto y el servidor Tomcat 9.
+- La aplicacion inicia con la vista de Login.
+- Para ingresa a la aplicacion se puede ingresar los usuarios que se encuentra en la base de datos, ej:
+  
+    - Usuario tipo cliente:
+  
+        - Nombre de usuario: Usuario 1.
+        - Contraseña: qwerty
+  
+    - Usuario tipo Administrativo:
+
+        - Nombre de usuario: Admin1
+        - Contraseña: 123456
+  
+- Para navegar dentro de la aplicacion se puede utilizar el navbar presente.
+- Puede cambiar la cuenta de usuario con la opcion salir en presente en el menu desplegable del navbar y volver ingresar con otro login.
  
 A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion del proyecto:
 
-- Consulta a la base de datos
+### Documentacion del proyecto segun la rubrica de evaluacion.
+
+#### Consulta a la base de datos
 
 1. Selecciona las columnas requeridas para presentar la información solicitada. 
 ![rb1](https://github.com/AndresSCP/Proyecto/assets/121947963/43ee6459-b990-49e5-a644-b5e48d8d62df)
+
+[Codigo 1](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL55C2-L55C2)
+
 2. Utiliza JOIN para relacionar la información de distintas tablas.
 ![rb2](https://github.com/AndresSCP/Proyecto/assets/121947963/1d00ca04-4166-4d5a-85b9-7e7ead7f5a20)
+
+[Codigo 2](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL64C1-L67C42)
+
 3. Utiliza WHERE para filtrar la información requerida.
 ![rb3](https://github.com/AndresSCP/Proyecto/assets/121947963/a02122c7-3f8d-4581-ae3f-565511ff3ac7)
+
+[Codigo 3](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL69C1-L69C1)
+
 4. Utiliza cláusulas de ordenamiento para presentar la información.
 ![rb4](https://github.com/AndresSCP/Proyecto/assets/121947963/5c72b27d-14b3-4665-b182-6492a126d026)
 5. Utiliza cláusulas de agrupación de información para obtener datos agregados.
 ![rb5](https://github.com/AndresSCP/Proyecto/assets/121947963/8c19d3ab-480f-48d4-9f48-21342b54bb24)
 
-- Algoritmo de cálculo y unidades de prueba
+#### Algoritmo de cálculo y unidades de prueba
 
 6. Utilización general del lenguaje, sintaxis, selección de tipos de datos, sentencias lógicas, expresiones, operaciones, comparaciones.
 
@@ -43,7 +80,7 @@ LoginController.java
 
 8. Utilización de clases, encapsulamiento y resposabilidad única. 
 
-9.Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario. 
+9. Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario. 
 
 10. Convenciones y estilos de programación.
 
