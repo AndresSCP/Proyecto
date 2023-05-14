@@ -50,59 +50,109 @@ A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion d
 #### Consulta a la base de datos
 
 1. Selecciona las columnas requeridas para presentar la información solicitada. 
+
 ![rb1](https://github.com/AndresSCP/Proyecto/assets/121947963/43ee6459-b990-49e5-a644-b5e48d8d62df)
 
-[Codigo 1](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL55C2-L55C2)
+[Ejemplo, Ver ubicacion del codigo 1](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL55C2-L55C2)
 
 2. Utiliza JOIN para relacionar la información de distintas tablas.
+
 ![rb2](https://github.com/AndresSCP/Proyecto/assets/121947963/1d00ca04-4166-4d5a-85b9-7e7ead7f5a20)
 
-[Codigo 2](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL64C1-L67C42)
+[Ejemplo, Ver ubicacion del codigo 2](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL64C1-L67C42)
 
 3. Utiliza WHERE para filtrar la información requerida.
+
 ![rb3](https://github.com/AndresSCP/Proyecto/assets/121947963/a02122c7-3f8d-4581-ae3f-565511ff3ac7)
 
-[Codigo 3](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL69C1-L69C1)
+[Ejemplo, Ver ubicacion del codigo 3](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL69C1-L69C1)
 
 4. Utiliza cláusulas de ordenamiento para presentar la información.
+
 ![rb4](https://github.com/AndresSCP/Proyecto/assets/121947963/5c72b27d-14b3-4665-b182-6492a126d026)
+
+[Ejemplo, Ver ubicacion del codigo 4](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL64C126-L64C126)
+
 5. Utiliza cláusulas de agrupación de información para obtener datos agregados.
+
 ![rb5](https://github.com/AndresSCP/Proyecto/assets/121947963/8c19d3ab-480f-48d4-9f48-21342b54bb24)
+
+[Ejemplo, Ver ubicacion del codigo 5](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/AdministrativoController.java#LL51C8-L51C8)
 
 #### Algoritmo de cálculo y unidades de prueba
 
 6. Utilización general del lenguaje, sintaxis, selección de tipos de datos, sentencias lógicas, expresiones, operaciones, comparaciones.
 
-![rb6](https://github.com/AndresSCP/Proyecto/assets/121947963/4c841b58-ad01-4857-a7ac-9f5eb76b86a7) 
-LoginController.java
+![rb6](https://github.com/AndresSCP/Proyecto/assets/121947963/4c841b58-ad01-4857-a7ac-9f5eb76b86a7)
+
+[Ejemplo, Ver ubicacion del codigo 6](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller/LoginController.java#L32)
 
 7. Utilización de sentencias repetitivas.
 
+[Ejemplo, Ver ubicacion del codigo 7](https://github.com/AndresSCP/Proyecto/blob/main/src/main/webapp/WEB-INF/views/administrativo.jsp#L60)
+
 8. Utilización de clases, encapsulamiento y resposabilidad única. 
+
+[Ejemplo, Ver ubicacion del codigo 8, clase cliente](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/models/Cliente.java#L6)
 
 9. Se utilizan correctamente interfaces o relaciones de herencia para hacer polimorfismo donde fuese necesario. 
 
+[Interfaz](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/models/dao/ClienteDAO.java#L1)
+
+[Implementacion interfaz](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/models/dao/impl/ClienteDAOImpl.java#L1)
+
 10. Convenciones y estilos de programación.
 
+Se utilizaron varias convenciones en programacion para la creacion del codigo, camel case, nombres apropiados para las clases, atributos, orden, etc.
+
 11. Utilización de unidades de prueba.
+
+[Prueba JUnit conexion](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/test/ConexionBDTest.java#LL1C1-L1C1)
 
 - Página web html y css
 
 12. Utilización de tags html, estilos y responsividad.
+
+[Ejemplo de utilizacion de tags, estilos y responsividad en vista de login](https://github.com/AndresSCP/Proyecto/blob/main/src/main/webapp/WEB-INF/views/login.jsp#L1)
+
+[Carpeta con archivos para la personalizacion de las vistas, css, js, e imagenes](https://github.com/AndresSCP/Proyecto/tree/main/src/main/webapp/resources)
+
 13. Utilización de Bootstrap.
+
+[Ejemplo de utilizacion Boostrap en login](https://github.com/AndresSCP/Proyecto/blob/main/src/main/webapp/WEB-INF/views/login.jsp#L1)
 
 - Spring MVC
 
 14. Utilización de Controllers.
+
+[Referirse al package de Models donde se encuentran todos los Controllers](https://github.com/AndresSCP/Proyecto/tree/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/controller)
+
 15. Utilización de vistas JSP y Taglib.
+
+[Implementacion taglib Jstl](https://github.com/AndresSCP/Proyecto/blob/main/src/main/webapp/WEB-INF/views/main.jsp#L3)
+
+[Ejemplo Uso Taglib](https://github.com/AndresSCP/Proyecto/blob/main/src/main/webapp/WEB-INF/views/main.jsp#LL95C10-L95C10)
+
 16. Creación Servicio Spring.
+
+Se creo el proyecto utilizando un archetype de maven con spring-mvc en Eclipse, se descargaron las dependencias utilizando el pom.xml luego de la creacion para obtener el formato necesario para su funcionamiento.
+
+[POM](https://github.com/AndresSCP/Proyecto/blob/main/pom.xml)
+
 17. Creación DAO acceso a datos.
+
+[Ejemplo Interfaz DAO](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/models/dao/impl/ClienteDAOImpl.java#L1)
+
+[Ejemplo Implementacion DAO](https://github.com/AndresSCP/Proyecto/blob/main/src/main/java/cl/bootcamp/maven/proyectoPersonal/models/dao/impl/ClienteDAOImpl.java#L1)
+
 18. Creación del proyecto y configuración.
+
+[Configuracion y formato se puede ver en la raiz del proyecto](https://github.com/AndresSCP/Proyecto)
+
 19. Funcionamiento general del aplicativo.
 
-- API Rest
-
-20.  Creación servicio Rest.
+El proyecto esta configurado con maven y spring mvc, y utiliza tomcat 9 como server.
+[Referirse al proyecto personal y clonarlo para luego  probar la funcionaliad del mismo](https://github.com/AndresSCP/Proyecto)
 
 
 
