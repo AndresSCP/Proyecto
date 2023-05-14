@@ -9,12 +9,15 @@ El objetivo principal de la aplicación es proporcionar a los usuarios un medio 
 
 La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de usar, lo que permite a los usuarios publicar y visualizar contenido de manera rápida y sencilla. Tambien cuenta con un modulo administrativo para que este tipo de usuarios pueda obtener informacion relevante de la aplicacion, como cantidad de usuarios,mensajes su actividad e informacion de la cuenta.
 
-## Indice
+## Índice
+---
+
 1. Caracteristicas tecnicas del proyecto.
 2. Instrucciones de instalacion.
-3. Documentacion del proyecto segun la rubrica de evaluacion.
+3. Documentacion del proyecto segun la rubrica de evaluación.
 
-### Caracteristicas tecnicas del proyecto
+### 1.- Características técnicas del proyecto
+---
 
 - El proyecto fue realizado con IDE Eclipse Enterprise.
 - Se utilizo el server Apache Tomcat 9.
@@ -23,7 +26,8 @@ La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de
 - Se añadió un feed de twitter, este contiene informacion acorde a el tema de la aplicacion.
 - La base de datos (proyectobdTEST) se encuentra dentro del proyecto y se construyo en MySQL, dentro de esta se encuentra el script que construye las tablas y se insertan datos de prueba para su visualizacion, asi como tambien distintas queries que sirven para observar el correcto funcionamiento y relacion entre las tablas.
 
-### Instrucciones de instalacion
+### 2.- Instrucciones para utilizar la aplicacion
+---
 
 - Iniciar el script de MySQL de la base de datos que esta dentro del proyecto llamado proyectobdTEST.sql y seleccionar el esquema si es que no se ha seleccionado automaticamente.
 - En el IDE iniciar el proyecto y el servidor Tomcat 9.
@@ -32,7 +36,7 @@ La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de
   
     - Usuario tipo cliente:
   
-        - Nombre de usuario: Usuario 1.
+        - Nombre de usuario: Usuario1.
         - Contraseña: qwerty
   
     - Usuario tipo Administrativo:
@@ -43,9 +47,10 @@ La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de
 - Para navegar dentro de la aplicacion se puede utilizar el navbar presente.
 - Puede cambiar la cuenta de usuario con la opcion salir en presente en el menu desplegable del navbar y volver ingresar con otro login.
  
-A continuacion se demuestra la evidencia de acuerdo a la rubrica de evaluacion del proyecto:
 
-### Documentacion del proyecto segun la rubrica de evaluacion.
+
+### 3.- Documentacion del proyecto segun la rubrica de evaluación.
+---
 
 #### Consulta a la base de datos
 
