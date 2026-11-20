@@ -21,7 +21,7 @@ La primera iteración fue un [prototipo estático](https://github.com/AndresSCP/
 - El proyecto fue realizado con IDE Eclipse Enterprise.
 - Se utilizo el server Apache Tomcat 9.
 - Para tener mejoras en el estilo visual y funcionalidad se utilizo la biblicoteca y script de Boostrap y estilos personalizados Css, asi como tambien Jquery y JavaScript.
-- Se integro la api de Google Maps para uso de localizacion de direcciones.
+- La entrega original integró Google Maps para buscar y ubicar direcciones. Durante el bootcamp, la configuración utilizada permitía una cantidad limitada de consultas. El código de la integración se conserva, pero queda por verificar si el mapa y la búsqueda funcionan con la configuración actual.
 - Se añadió un feed de twitter, este contiene informacion acorde a el tema de la aplicacion.
 - La base de datos (proyectobdTEST) se encuentra dentro del proyecto y se construyo en MySQL, dentro de esta se encuentra el script que construye las tablas y se insertan datos de prueba para su visualizacion, asi como tambien distintas queries que sirven para observar el correcto funcionamiento y relacion entre las tablas.
 
