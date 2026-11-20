@@ -1,13 +1,12 @@
-# Proyecto MyAlert
----
+# MyAlert! · Reportes vecinales
 
-Este proyecto fue desarrollado como parte de un portafolio para un bootcamp de Desarrollador Java Full Stack Trainee, con el objetivo de demostrar las habilidades y conocimientos adquiridos durante el programa de formación y presentarlos a posibles empleadores y/o clientes.
+MyAlert! es una aplicación web de reportes vecinales. Permite compartir avisos sobre incidentes como accidentes, incendios y robos, indicando dónde ocurrieron y agregando una referencia del lugar. También incluye una vista con mapa y un panel administrativo para consultar usuarios y mensajes.
 
-Se presenta como aplicación web para que los usuarios posteen mensajes relacionados con temas de seguridad, tales como accidentes, incendios, robos, entre otros. La aplicación está diseñada bajo el patrón de arquitectura Modelo-Vista-Controlador (MVC), utilizando java y formato maven con Spring MVC como framework para la implementación.
+## Origen del proyecto
 
-El objetivo principal de la aplicación es proporcionar a los usuarios un medio seguro y fácil de usar para compartir información sobre situaciones de riesgo y alertar a otros usuarios en su área. La plataforma permite a los usuarios crear publicaciones con detalles de la situación de seguridad que están experimentando, así como proporcionar información útil, como ubicación y fotografías, para ayudar a otros usuarios a identificar y evitar posibles peligros.
+Desarrollé MyAlert! como proyecto individual para un bootcamp de Desarrollo Java Full Stack en 2023. El plan original era usar Spring Boot. Las restricciones de versión de Java del curso llevaron a adaptar el proyecto y presentar esta versión con Java 8, Spring MVC, JSP, Tomcat 9 y MySQL.
 
-La aplicación está diseñada con una interfaz de usuario intuitiva y fácil de usar, lo que permite a los usuarios publicar y visualizar contenido de manera rápida y sencilla. Tambien cuenta con un modulo administrativo para que este tipo de usuarios pueda obtener informacion relevante de la aplicacion, como cantidad de usuarios,mensajes su actividad e informacion de la cuenta.
+La primera iteración fue un [prototipo estático](https://github.com/AndresSCP/Proyecto-Individual). Esta versión incorpora el backend y la base de datos, además de las evidencias de la rúbrica de evaluación.
 
 ## Índice
 ---
